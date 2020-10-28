@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let type = 0;
 
   const show = (elem) => {
-    elem.classList.add("show");
+    elem.classList.add("show", "fade");
     elem.classList.remove("hide");
   };
 
   const hide = (elem) => {
     elem.classList.add("hide");
-    elem.classList.remove("show");
+    elem.classList.remove("show", "fade");
   };
 
   const closeModal = () => {
@@ -150,7 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       hide(menuList);
       hide(mainMask);
+      btnMenu.classList.remove("rotate-first");
+      btnMenu.classList.add("rotate-second");
     } else {
+      btnMenu.classList.remove("rotate-second");
+      btnMenu.classList.add("rotate-first");
       show(menuList);
       show(mainMask);
     }
@@ -183,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       show(backBtn);
       step = 2;
       type = parent - 1;
-      console.log(type);
+      btnMenu.classList.add("rotate-second");
     });
   });
 });

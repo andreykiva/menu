@@ -124,6 +124,8 @@ main.main {
 
 .show {
     display: block;
+    animation-name: show;
+    animation-duration: 1.5s;
 }
 
 .hide {
@@ -262,4 +264,35 @@ main.main {
     color: #f65058;
     margin-left: 30px;
     font-size: 30px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.top-item:hover, .menu__list ul li:hover {
+    color: #bb151e;
+    transition: color linear .5s;
+}
+ 
+.rotate-first {
+    transform: rotate(90deg);
+    transition: all ease-in-out .5s;
+}
+
+.rotate-second {
+    transform: rotate(180deg);
+    transition: all ease-in-out .5s;
 }
