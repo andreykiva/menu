@@ -68,7 +68,6 @@ main.main {
     position: absolute;
     z-index: 4;
     width: 100%;
-    height: 100%;
     background-color: rgba(121, 110, 110, 0.575);
 }
 
@@ -197,32 +196,14 @@ main.main {
     left: -10px;
 }
 
-.types-item-icon {
-    width: 50%;
-    height: auto;
-    background-color: #faf3f1;
-    position: relative;
-    background-image: url("../img/hot-tea.png");
-    background-size: 60px;
-}
-
-.types-item-icon.kitchen {
-    background-image: url("../img/ice-cream.png");
-}
-
-.types-item-icon.hookah {
-    background-image: url("../img/hookah-icon.png");
-}
-
 .modal {
     font-size: 40px;
     font-weight: 700;
     color: #f65058;
     position: absolute;
     z-index: 5;
-    top: 100px;
     max-width: 600px;
-    margin: 0 10px;
+    margin: 0 auto;
     padding: 15px;
     background-color: #f8dcd4;
 }

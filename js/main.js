@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
       modal = document.createElement("div");
 
     modal.classList.add("modal");
+    modal.style.top =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight +
+      document.documentElement.clientHeight / 4 +
+      "px";
     modal.innerHTML = `
           <div class="modal__title">${child.children[1].textContent.replace(
             /^\s*(.*)\s*$/,
@@ -59,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".container").append(modal);
     document.body.style.overflow = "hidden";
     show(mainMask);
+    mainMask.style.height = document.documentElement.clientHeight + "px";
     step++;
 
     modalClose = document.querySelector("[data-close]");
