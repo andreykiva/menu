@@ -115,6 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
   mainMask.addEventListener("click", () => {
     closeModal();
     hide(menuList);
+    if (btnMenu.classList.contains("rotate-first")) {
+      btnMenu.classList.remove("rotate-first");
+      btnMenu.classList.add("rotate-second");
+    }
   });
 
   backBtn.addEventListener("click", () => {
