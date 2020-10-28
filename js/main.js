@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btnMenu.classList.add("rotate-first");
       show(menuList);
       show(mainMask);
+      mainMask.style.height = document.documentElement.clientHeight + "px";
     }
   });
 
