@@ -1,0 +1,11 @@
+@media (max-width:550px) {
+
+    .kitchen__products .product-mask-title {
+        font-size: 50px;
+    }
+
+    .kitchen__products .types-mask-title::before,
+    .kitchen__products .product-mask-title::before {
+        top: -24px;
+    }
+}

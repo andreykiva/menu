@@ -1,0 +1,284 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Amatic SC', cursive;
+    background-color: #fcf8f7;
+    line-height: 0.8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: #faebe7;
+}
+
+.header .back {
+    cursor: pointer;
+    color: #f65058;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.header .header__logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: #f65058;
+    text-decoration: none;
+}
+
+.btn__menu {
+    width: 30px;
+}
+
+.btn__menu div {
+    height: 2px;
+    background-color: #f65058;
+}
+
+.btn__menu div:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+main.main {
+    background-color: #faebe7;
+}
+
+.main__mask {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(121, 110, 110, 0.575);
+}
+
+.main__menu-item {
+    cursor: pointer;
+    position: relative;
+    max-width: 600px;
+    border-bottom: 2px solid #fff;
+}
+
+.item-img {
+    position: relative;
+}
+
+.main__menu-item img {
+    width: 100%;
+}
+
+.mask,
+.product-mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(194, 83, 83, 0.432);
+    z-index: 2;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.mask-title,
+.product-mask-title {
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    color: #fff;
+    font-size: 80px;
+    font-weight: 400;
+    z-index: 3;
+}
+
+.mask-title::before,
+.product-mask-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    border-left: 2px solid #fff;
+    top: 0;
+    left: -10px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.bar__types-item,
+.kitchen__types-item,
+.hookah__types-item,
+.bar__product,
+.kitchen__product,
+.hookah__product {
+    cursor: pointer;
+    position: relative;
+    max-width: 600px;
+    border-bottom: 2px solid #fff;
+    background-color: #faebe7;
+}
+
+.types-item-content,
+.hookah__product,
+.bar__product,
+.kitchen__product {
+    display: flex;
+}
+
+.types-mask,
+.product-mask {
+    position: relative;
+}
+
+.types-item-img img,
+.product-item-img img {
+    width: 100%;
+}
+
+.types-mask,
+.product-mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(194, 83, 83, 0.432);
+    z-index: 2;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.types-mask-title,
+.product-mask-title {
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    color: #fff;
+    font-size: 80px;
+    font-weight: 400;
+    z-index: 3;
+}
+
+.types-mask-title::before,
+.product-mask-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    border-left: 2px solid #fff;
+    top: 0;
+    left: -10px;
+}
+
+.types-item-icon {
+    width: 50%;
+    height: auto;
+    background-color: #faf3f1;
+    position: relative;
+    background-image: url("../img/hot-tea.png");
+    background-size: 60px;
+}
+
+.types-item-icon.kitchen {
+    background-image: url("../img/ice-cream.png");
+}
+
+.types-item-icon.hookah {
+    background-image: url("../img/hookah-icon.png");
+}
+
+.modal {
+    font-size: 40px;
+    font-weight: 700;
+    color: #f65058;
+    position: absolute;
+    z-index: 5;
+    top: 100px;
+    max-width: 600px;
+    margin: 0 10px;
+    padding: 15px;
+    background-color: #f8dcd4;
+}
+
+.modal__title {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__title span {
+    padding-top: 10px;
+    font-size: 90px;
+    line-height: 0;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.modal img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu__list {
+    border-top: 2px solid #f65058;
+    background-color: #faebe7;
+    list-style: none;
+    width: 100%;
+    position: absolute;
+    z-index: 6;
+    padding-bottom: 40px;
+}
+
+.menu__list li {
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: left;
+    color: #f65058;
+    margin-left: 15px;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.menu__list ul {
+    list-style: none;
+}
+
+.menu__list ul li{
+    cursor: pointer;
+    list-style: none;
+    color: #f65058;
+    margin-left: 30px;
+    font-size: 30px;
+}
