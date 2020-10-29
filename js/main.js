@@ -146,14 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   topSubitems.forEach((item, index) => {
     item.addEventListener("click", () => {
-      topItems.forEach((item) => {
-        hide(item.nextElementSibling);
-      });
       mainMenuItem.forEach((i) => {
         hide(i);
       });
-      hide(menuList);
-      hide(mainMask);
+      closeMenu();
       closeList();
       const parent = item.parentElement.getAttribute("class");
       show(mainTypesContent[parent - 1]);
