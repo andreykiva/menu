@@ -30,13 +30,38 @@ header.header {
     padding: 15px;
     text-align: center;
     background-color: #faebe7;
+    position: relative;
+    z-index: 6;
 }
 
 .header .back {
+    min-height: 30px;
     cursor: pointer;
     color: #f65058;
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 700;
+}
+
+.header div,
+.header nav {
+    width: 100px;
+}
+
+.header a {
+    width: 55px;
+}
+
+.back {
+    text-align: left;
+}
+
+.back span {
+    display: block;
+    color: #f65058;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 4px;
+    padding-top: 4px;
 }
 
 .header .header__logo {
@@ -47,12 +72,18 @@ header.header {
 }
 
 .btn__menu {
-    width: 30px;
+    max-width: 30px;
+}
+
+.header .menu {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .btn__menu div {
     height: 2px;
     background-color: #f65058;
+    width: 30px;
 }
 
 .btn__menu div:not(:last-child) {
@@ -100,7 +131,8 @@ main.main {
 }
 
 .mask-title,
-.product-mask-title {
+.product-mask-title,
+.types-mask-title {
     position: absolute;
     left: 10px;
     bottom: 15px;
@@ -111,7 +143,8 @@ main.main {
 }
 
 .mask-title::before,
-.product-mask-title::before {
+.product-mask-title::before,
+.types-mask-title::before {
     content: "";
     display: block;
     position: absolute;
@@ -122,10 +155,31 @@ main.main {
     left: -10px;
 }
 
+
+.product-mask-price {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #fff;
+    font-size: 45px;
+    font-weight: 400;
+    z-index: 3;
+    padding-top: 15px;
+}
+
+.product-mask-price::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    border-right: 2px solid #fff;
+    top: 0;
+    right: -10px;
+}
+
 .show {
     display: block;
-    animation-name: show;
-    animation-duration: 1.5s;
 }
 
 .hide {
@@ -138,11 +192,16 @@ main.main {
 .bar__product,
 .kitchen__product,
 .hookah__product {
-    cursor: pointer;
     position: relative;
     max-width: 600px;
     border-bottom: 2px solid #fff;
     background-color: #faebe7;
+}
+
+.bar__types-item,
+.kitchen__types-item,
+.hookah__types-item {
+    cursor: pointer;
 }
 
 .types-item-content,
@@ -175,60 +234,6 @@ main.main {
     padding-left: 10px;
 }
 
-.types-mask-title,
-.product-mask-title {
-    position: absolute;
-    left: 10px;
-    bottom: 15px;
-    color: #fff;
-    font-size: 80px;
-    font-weight: 400;
-    z-index: 3;
-}
-
-.types-mask-title::before,
-.product-mask-title::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    border-left: 2px solid #fff;
-    top: 0;
-    left: -10px;
-}
-
-.modal {
-    font-size: 40px;
-    font-weight: 700;
-    color: #f65058;
-    position: absolute;
-    z-index: 5;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 15px;
-    background-color: #f8dcd4;
-}
-
-.modal__title {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.modal__title span {
-    padding-top: 10px;
-    font-size: 90px;
-    line-height: 0;
-    margin-left: 15px;
-    cursor: pointer;
-}
-
-.modal img {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
 .menu {
     position: relative;
 }
@@ -239,8 +244,39 @@ main.main {
     list-style: none;
     width: 100%;
     position: absolute;
-    z-index: 6;
-    padding-bottom: 40px;
+    z-index: 4;
+}
+
+.menu__list-open {
+    animation-name: menu__list-open;
+    animation-duration: 1.5s;
+    top: 0;
+}
+
+@keyframes menu__list-open {
+    from {
+        top: -400px;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+.menu__list-close {
+    animation-name: menu__list-close;
+    animation-duration: 1.5s;
+    top: -400px;
+}
+
+@keyframes menu__list-close {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: -400px;
+    }
 }
 
 .menu__list li {
@@ -258,7 +294,7 @@ main.main {
     list-style: none;
 }
 
-.menu__list ul li{
+.menu__list ul li {
     cursor: pointer;
     list-style: none;
     color: #f65058;
@@ -281,12 +317,12 @@ main.main {
     }
 }
 
-
-.top-item:hover, .menu__list ul li:hover {
+.top-item:hover,
+.menu__list ul li:hover {
     color: #bb151e;
     transition: color linear .5s;
 }
- 
+
 .rotate-first {
     transform: rotate(90deg);
     transition: all ease-in-out .5s;
@@ -295,4 +331,50 @@ main.main {
 .rotate-second {
     transform: rotate(180deg);
     transition: all ease-in-out .5s;
+}
+
+.menu__list .contacts {
+    border-top: 2px solid #f65058;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.menu__list .contacts li {
+    font-size: 26px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.social-networks-list {
+    display: flex;
+    height: 24px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.instagram a,
+.telegram a,
+.vk a {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: 0;
+}
+
+.instagram a {
+    left: 0;
+    background-image: url("../icons/instagram.png");
+}
+
+.telegram a {
+    left: 48px;
+    background-image: url("../icons/telegram.png");
+}
+
+.vk a {
+    left: 96px;
+    background-image: url("../icons/vk.png");
 }

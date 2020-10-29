@@ -1,74 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mainTypesContent = document.querySelectorAll(".type"),
+    mainContainer = document.querySelector("main"),
     mainMenu = document.querySelector(".main__menu"),
     mainMenuItem = document.querySelectorAll(".main__menu-item"),
     typesItemContent = document.querySelectorAll(".types-item"),
     productsList = document.querySelectorAll(".products"),
-    products = document.querySelectorAll(".product"),
     mainMask = document.querySelector(".main__mask"),
     backBtn = document.querySelector(".back"),
+    backTitle = document.querySelector(".back span"),
     btnMenu = document.querySelector(".btn__menu"),
     menuList = document.querySelector(".menu__list"),
     topItems = document.querySelectorAll(".top-item"),
-    topSubitems = document.querySelectorAll(".menu__list ul li");
+    topSubitems = document.querySelectorAll(".li-item"),
+    maskTitles = document.querySelectorAll(".mask-title");
 
   let step = 0;
   let type = 0;
 
   const show = (elem) => {
-    elem.classList.add("show", "fade");
-    elem.classList.remove("hide");
+    if (elem === backBtn) {
+      elem.style.display = "flex";
+      elem.classList.add("fade");
+    } else {
+      elem.classList.add("show", "fade");
+      elem.classList.remove("hide");
+    }
   };
 
   const hide = (elem) => {
     elem.classList.add("hide");
     elem.classList.remove("show", "fade");
-  };
-
-  const closeModal = () => {
-    hide(mainMask);
-    document.body.style.overflow = "";
-    if (document.querySelector(".modal")) {
-      document.querySelector(".modal").remove();
-      step--;
-    }
-  };
-
-  const openModal = (product) => {
-    const child = product.children[0],
-      descr = "",
-      modal = document.createElement("div");
-
-    modal.classList.add("modal");
-    modal.style.top =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight +
-      document.documentElement.clientHeight / 4 +
-      "px";
-    modal.innerHTML = `
-          <div class="modal__title">${child.children[1].textContent.replace(
-            /^\s*(.*)\s*$/,
-            "$1"
-          )}
-            <span data-close>×</span>
-          </div>
-          <div class="modal__img">
-            <img src=${child.children[2].getAttribute(
-              "src"
-            )} alt=${child.children[2].getAttribute("alt")}>
-          </div>
-          <div class="modal__price">100₴</div>
-          <div class="modal__descr">${descr}</div>
-  `;
-
-    document.querySelector(".container").append(modal);
-    document.body.style.overflow = "hidden";
-    show(mainMask);
-    mainMask.style.height = document.documentElement.clientHeight + "px";
-    step++;
-
-    modalClose = document.querySelector("[data-close]");
-    modalClose.addEventListener("click", closeModal);
   };
 
   const closeList = () => {
@@ -79,6 +40,26 @@ document.addEventListener("DOMContentLoaded", () => {
     mainTypesContent.forEach((type) => {
       hide(type);
     });
+  };
+
+  const openMenu = () => {
+    show(mainMask);
+    mainMask.style.height = mainContainer.scrollHeight + "px";
+    btnMenu.classList.remove("rotate-second");
+    btnMenu.classList.add("rotate-first");
+    menuList.classList.remove("hide", "menu__list-close");
+    menuList.classList.add("menu__list-open");
+  };
+
+  const closeMenu = () => {
+    topItems.forEach((item) => {
+      hide(item.nextElementSibling);
+    });
+    hide(mainMask);
+    btnMenu.classList.add("rotate-second");
+    btnMenu.classList.remove("rotate-first");
+    menuList.classList.remove("menu__list-open");
+    menuList.classList.add("menu__list-close");
   };
 
   closeList();
@@ -93,37 +74,40 @@ document.addEventListener("DOMContentLoaded", () => {
       show(backBtn);
       type = index;
       step++;
+      backTitle.textContent = maskTitles[type].textContent;
+      window.scrollTo(0, 0);
     });
   });
 
   typesItemContent.forEach((item) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (e) => {
       typesItemContent.forEach((i) => {
         hide(i);
       });
       show(item.nextElementSibling);
+      backTitle.textContent =
+        item.children[0].children[0].children[1].textContent;
       step++;
-    });
-  });
-
-  products.forEach((product) => {
-    product.addEventListener("click", () => {
-      openModal(product);
+      window.scrollTo(0, 0);
     });
   });
 
   mainMask.addEventListener("click", () => {
-    closeModal();
-    hide(menuList);
+    closeMenu();
     if (btnMenu.classList.contains("rotate-first")) {
       btnMenu.classList.remove("rotate-first");
       btnMenu.classList.add("rotate-second");
+      topItems.forEach((item) => {
+        hide(item.nextElementSibling);
+      });
     }
+    hide(mainMask);
   });
 
   backBtn.addEventListener("click", () => {
     if (step === 1) {
       hide(backBtn);
+      backBtn.style.display = "none";
       closeList();
       show(mainMenu);
       typesItemContent.forEach((item) => {
@@ -142,26 +126,15 @@ document.addEventListener("DOMContentLoaded", () => {
         show(item);
       });
       step--;
-    } else if (step === 3) {
-      closeModal();
+      backTitle.textContent = maskTitles[type].textContent;
     }
   });
 
   btnMenu.addEventListener("click", () => {
-    if (menuList.classList.contains("show")) {
-      topItems.forEach((item) => {
-        hide(item.nextElementSibling);
-      });
-      hide(menuList);
-      hide(mainMask);
-      btnMenu.classList.remove("rotate-first");
-      btnMenu.classList.add("rotate-second");
+    if (menuList.classList.contains("menu__list-open")) {
+      closeMenu();
     } else {
-      btnMenu.classList.remove("rotate-second");
-      btnMenu.classList.add("rotate-first");
-      show(menuList);
-      show(mainMask);
-      mainMask.style.height = document.documentElement.clientHeight + "px";
+      openMenu();
     }
   });
 
@@ -182,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
       hide(menuList);
       hide(mainMask);
       closeList();
-      closeModal();
       const parent = item.parentElement.getAttribute("class");
       show(mainTypesContent[parent - 1]);
       show(productsList[index]);
@@ -195,4 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
       btnMenu.classList.add("rotate-second");
     });
   });
+
+  window.addEventListener(
+    `resize`,
+    () => {
+      mainMask.style.height = mainContainer.scrollHeight + "px";
+    },
+    false
+  );
 });
