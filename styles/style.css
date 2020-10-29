@@ -280,7 +280,6 @@ main.main {
 }
 
 .menu__list li {
-    cursor: pointer;
     margin-top: 20px;
     text-align: left;
     color: #f65058;
@@ -294,7 +293,12 @@ main.main {
     list-style: none;
 }
 
-.menu__list ul li {
+.menu__list .top-item {
+    cursor: pointer;
+}
+
+.menu__list .li-item {
+    cursor: pointer;
     cursor: pointer;
     list-style: none;
     color: #f65058;
@@ -318,7 +322,7 @@ main.main {
 }
 
 .top-item:hover,
-.menu__list ul li:hover {
+.menu__list .li-item:hover {
     color: #bb151e;
     transition: color linear .5s;
 }
