@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
       step = 2;
       type = parent - 1;
       btnMenu.classList.add("rotate-second");
+      backTitle.textContent = item.textContent;
     });
   });
 
