@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let start = element.scrollLeft,
       change = to - start,
       currentTime = 0,
-      increment = 20;
+      increment = 1;
 
     let animateScroll = function () {
       currentTime += increment;
@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
           showTabContent(i);
 
           if (tab.getBoundingClientRect().x > tabsParent.clientWidth / 2) {
-            scrollTo(tabsParent, scrollRight(tab), 500);
+            scrollTo(tabsParent, scrollRight(tab), 50);
           } else {
-            scrollTo(tabsParent, scrollLeft(tab), 500);
+            scrollTo(tabsParent, scrollLeft(tab), 50);
           }
         }
       });
