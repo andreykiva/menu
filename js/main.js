@@ -21,23 +21,56 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const scrollRight = (tab) => {
-    tabsParent.scrollLeft +=
+    return (
+      tabsParent.scrollLeft +
       tab.getBoundingClientRect().x -
       tabsParent.clientWidth / 2 +
       tab.clientWidth / 2 -
-      tabsParent.offsetLeft;
+      tabsParent.offsetLeft
+    );
   };
 
   const scrollLeft = (tab) => {
-    tabsParent.scrollLeft -=
-      tabsParent.clientWidth / 2 -
-      tab.getBoundingClientRect().x -
-      tab.clientWidth +
-      tab.clientWidth / 2;
+    return (
+      tabsParent.scrollLeft -
+      (tabsParent.clientWidth / 2 -
+        tab.getBoundingClientRect().x -
+        tab.clientWidth +
+        tab.clientWidth / 2)
+    );
   };
 
   hideTabContent();
   showTabContent();
+
+  Math.easeInOutQuad = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  };
+
+  const scrollTo = (element, to, duration) => {
+    let start = element.scrollLeft,
+      change = to - start,
+      currentTime = 0,
+      increment = 20;
+
+    let animateScroll = function () {
+      currentTime += increment;
+      let val = Math.easeInOutQuad(
+        currentTime,
+        start,
+        change,
+        duration
+      );
+      element.scrollLeft = val;
+      if (currentTime < duration) {
+        setTimeout(animateScroll, increment);
+      }
+    };
+    animateScroll();
+  }
 
   tabsParent.addEventListener("click", (e) => {
     const target = e.target;
@@ -49,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
           showTabContent(i);
 
           if (tab.getBoundingClientRect().x > tabsParent.clientWidth / 2) {
-            scrollRight(tab);
+            scrollTo(tabsParent, scrollRight(tab), 500);
           } else {
-            scrollLeft(tab);
+            scrollTo(tabsParent, scrollLeft(tab), 500);
           }
         }
       });
