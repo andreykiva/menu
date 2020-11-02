@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const tabs = document.querySelectorAll(".nav__item"),
+  const tabs = document.querySelectorAll(".nav__item"),
     tabsContent = document.querySelectorAll(".main__content"),
     tabsParent = document.querySelector(".nav");
 
@@ -20,6 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
     tabs[i].classList.add("active");
   };
 
+  const scrollRight = (tab) => {
+    tabsParent.scrollLeft +=
+      tab.getBoundingClientRect().x -
+      tabsParent.clientWidth / 2 +
+      tab.clientWidth / 2 -
+      tabsParent.offsetLeft;
+  };
+
+  const scrollLeft = (tab) => {
+    tabsParent.scrollLeft -=
+      tabsParent.clientWidth / 2 -
+      tab.getBoundingClientRect().x -
+      tab.clientWidth +
+      tab.clientWidth / 2;
+  };
+
   hideTabContent();
   showTabContent();
 
@@ -31,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (target === tab) {
           hideTabContent();
           showTabContent(i);
+
+          if (tab.getBoundingClientRect().x > tabsParent.clientWidth / 2) {
+            scrollRight(tab);
+          } else {
+            scrollLeft(tab);
+          }
         }
       });
     }
