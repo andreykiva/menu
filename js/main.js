@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     tabs.forEach((tab) => {
-      tab.parentNode.classList.remove("nav__item-active");
+      tab.parentNode.classList.remove("nav__item-active", "fade-menu");
     });
   };
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tabsContent[i].classList.remove("hide");
     tabsContent[i].classList.add("show", "fade");
     tabs[i].parentNode.classList.add("nav__item-active");
-    tabs[i].parentNode.classList.add(classNames[i]);
+    tabs[i].parentNode.classList.add(classNames[i], "fade-menu");
   };
 
   const showContent = (elem) => {
