@@ -53,7 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
           productItems.forEach((item) => {
             item.classList.remove("product__item-active");
           });
-          hideContent(productMenuContent[i]);
+          productMenuContent.forEach((menu) => {
+            hideContent(menu);
+          });
           showContent(pageMenu[page]);
         }
       });
