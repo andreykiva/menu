@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".nav__item"),
-    tabsContent = document.querySelectorAll(".main__content"),
-    tabsParent = document.querySelector(".nav");
+    tabsContent = document.querySelectorAll(".page"),
+    tabsParent = document.querySelector(".nav"),
+    productMenuContent = document.querySelectorAll(".item__content"),
+    productItems = document.querySelectorAll(".product__item"),
+    menuItems = document.querySelectorAll(".menu__item"),
+    backArrows = document.querySelectorAll(".back_arrow"),
+    pageMenu = document.querySelectorAll(".menu");
+
+  let page = 0;
+  const classNames = ["cultery", "soda", "home", "hookah", "pipe"];
 
   const hideTabContent = () => {
     tabsContent.forEach((item) => {
@@ -10,84 +18,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     tabs.forEach((tab) => {
-      tab.classList.remove("active");
+      tab.parentNode.classList.remove("nav__item-active");
     });
   };
 
   const showTabContent = (i = 0) => {
     tabsContent[i].classList.remove("hide");
     tabsContent[i].classList.add("show", "fade");
-    tabs[i].classList.add("active");
+    tabs[i].parentNode.classList.add("nav__item-active");
+    tabs[i].parentNode.classList.add(classNames[i]);
   };
 
-  const scrollRight = (tab) => {
-    return (
-      tabsParent.scrollLeft +
-      tab.getBoundingClientRect().x -
-      tabsParent.clientWidth / 2 +
-      tab.clientWidth / 2 -
-      tabsParent.offsetLeft
-    );
+  const showContent = (elem) => {
+    elem.classList.remove("hide");
+    elem.classList.add("show", "fade");
   };
 
-  const scrollLeft = (tab) => {
-    return (
-      tabsParent.scrollLeft -
-      (tabsParent.clientWidth / 2 -
-        tab.getBoundingClientRect().x -
-        tab.clientWidth +
-        tab.clientWidth / 2)
-    );
+  const hideContent = (elem) => {
+    elem.classList.remove("show", "fade");
+    elem.classList.add("hide");
   };
 
-  hideTabContent();
-  showTabContent();
-
-  Math.easeInOutQuad = (t, b, c, d) => {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  };
-
-  const scrollTo = (element, to, duration) => {
-    let start = element.scrollLeft,
-      change = to - start,
-      currentTime = 0,
-      increment = 1;
-
-    let animateScroll = function () {
-      currentTime += increment;
-      let val = Math.easeInOutQuad(
-        currentTime,
-        start,
-        change,
-        duration
-      );
-      element.scrollLeft = val;
-      if (currentTime < duration) {
-        setTimeout(animateScroll, increment);
-      }
-    };
-    animateScroll();
-  }
+  showTabContent(2);
 
   tabsParent.addEventListener("click", (e) => {
     const target = e.target;
 
     if (target && target.classList.contains("nav__item")) {
       tabs.forEach((tab, i) => {
-        if (target === tab) {
+        if (target == tab) {
           hideTabContent();
           showTabContent(i);
-
-          if (tab.getBoundingClientRect().x > tabsParent.clientWidth / 2) {
-            scrollTo(tabsParent, scrollRight(tab), 50);
-          } else {
-            scrollTo(tabsParent, scrollLeft(tab), 50);
-          }
+          window.scrollTo(0, 0);
+          productItems.forEach((item) => {
+            item.classList.remove("product__item-active");
+          });
+          hideContent(productMenuContent[i]);
+          showContent(pageMenu[page]);
         }
       });
     }
+  });
+
+  productItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("product__item-active");
+    });
+  });
+
+  menuItems.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      pageMenu.forEach((menu, index) => {
+        if (menu === item.parentNode) {
+          page = index;
+        }
+      });
+      hideContent(item.parentNode);
+      showContent(productMenuContent[i]);
+      window.scrollTo(0, 0);
+    });
+  });
+
+  backArrows.forEach((arrow, i) => {
+    arrow.addEventListener("click", () => {
+      hideContent(productMenuContent[i]);
+      showContent(pageMenu[page]);
+      window.scrollTo(0, 0);
+      productItems.forEach((item) => {
+        item.classList.remove("product__item-active");
+      });
+    });
   });
 });
