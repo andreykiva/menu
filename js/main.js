@@ -130,11 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showTabContent(tabsActive[i]);
       tabsParent[i].scrollLeft = 0;
       headerTitle.textContent = titles[i];
-      if (i === 2 || i === 3) {
-        document.querySelectorAll(".slick-track").forEach((item) => {
-          item.style.transform = "translate3d(0px, 0px, 0px)";
-        });
-      }
     });
   });
 
