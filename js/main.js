@@ -112,8 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".slick-track").forEach((item) => {
               item.style.transform = "translate3d(15px, 0px, 0px)";
             });
-
-            
           }
         });
       }
