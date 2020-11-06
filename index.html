@@ -4,933 +4,847 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example 2</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>Example 1</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <header class="header">
-        <div class="header__logo">
-            <img src="./img/logo.svg" alt="Logo">
-        </div>
-        <nav class="nav">
-            <div class="nav__item">Закуски</div>
-            <div class="nav__item">Салаты</div>
-            <div class="nav__item">Супы</div>
-            <div class="nav__item">Основные блюда</div>
-            <div class="nav__item">Гарниры</div>
-            <div class="nav__item">Бургеры</div>
-            <div class="nav__item">Десерты</div>
-            <div class="nav__item">Япония</div>
-            <div class="nav__item">Ланч</div>
-            <div class="nav__item">Кофе</div>
-            <div class="nav__item">Чай</div>
-            <div class="nav__item">Горячие напитки</div>
-            <div class="nav__item">Напитки</div>
-            <div class="nav__item">Холодные безалкогольные</div>
-            <div class="nav__item">Крепкий алкоголь</div>
-            <div class="nav__item">Вино</div>
-            <div class="nav__item">Пиво</div>
-            <div class="nav__item">Коктейли</div>
-            <div class="nav__item">Кальяны</div>
-            <div class="nav__item">IQOS</div>
+        <div class="back hide">←<span></span></div>
+        <a href="#" class="header__logo">Logo</a>
+        <nav class="menu">
+            <div class="btn__menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </nav>
     </header>
     <main class="main">
+        <div class="main__mask">
+        </div>
         <div class="container">
-            <div class="main__content">
-                <div class="main__content-title">Закуски</div>
-                <img class="main__img" src="./img/snacks.jpg" alt="Snacks">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
+            <ul class="menu__list hide">
+                <li class="top-item">Бар</li>
+                <li class="hide">
+                    <ul class="1">
+                        <li class="li-item">Кофе</li>
+                        <li class="li-item">Чай</li>
+                        <li class="li-item">Напитки</li>
+                        <li class="li-item">Коктейли</li>
+                        <li class="li-item">Крепкий алкоголь</li>
+                        <li class="li-item">Вино</li>
+                        <li class="li-item">Пиво</li>
+                    </ul>
+                </li>
+                <li class="top-item">Кухня</li>
+                <li class="hide">
+                    <ul class="2">
+                        <li class="li-item">Супы</li>
+                        <li class="li-item">Основные блюда</li>
+                        <li class="li-item">Салаты</li>
+                        <li class="li-item">закуски</li>
+                        <li class="li-item">Десерты</li>
+                        <li class="li-item">Япония</li>
+                    </ul>
+                </li>
+                <li class="top-item">Кальян</li>
+                <li class="hide">
+                    <ul class="3">
+                        <li class="li-item">Табак</li>
+                    </ul>
+                </li>
+                <li class="contacts">
+                    <ul>
+                        <li>Телефон: +380999999999</li>
+                        <li>Адрес: г.Харьков, ул.Пушкинская 48</li>
+                        <li class="social-networks">
+                            <ul class="social-networks-list">
+                                <li class="instagram"><a href="#"></a></li>
+                                <li class="telegram"><a href="#"></a></li>
+                                <li class="vk"><a href="#"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+            <div class="main__menu">
+
+                <div class="main__menu-item">
+                    <div class="item-img">
+                        <div class="mask">
+                        </div>
+                        <div class="mask-title">
+                            Бар
+                        </div>
+                        <img src="./img/bar.jpg" alt="bar">
+                    </div>
+                </div>
+
+                <div class="main__menu-item">
+                    <div class="item-img">
+                        <div class="mask">
+                        </div>
+                        <div class="mask-title">
+                            Кухня
+                        </div>
+                        <img src="./img/kitchen.jpg" alt="kitchen">
+                    </div>
+                </div>
+
+                <div class="main__menu-item">
+                    <div class="item-img">
+                        <div class="mask">
+                        </div>
+                        <div class="mask-title">
+                            Кальян
+                        </div>
+                        <img src="./img/hookah.jpg" alt="hookah">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bar__types type hide">
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Кофе
+                            </div>
+                            <img src="./img/coffee.jpg" alt="coffee">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Эспрессо
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/espresso.jpeg" alt="espresso">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Американо
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/americano.jpg" alt="americano">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Латте
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/latte.jpg" alt="latte">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Чай
+                            </div>
+                            <img src="./img/tea.jpg" alt="tea">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Зеленый чай
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/green_tea.jpg" alt="green_tea">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Черный чай
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/black_tea.jpg" alt="black_tea">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Красный чай
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/red_tea.jpg" alt="red_tea">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Напитки
+                            </div>
+                            <img src="./img/beverages.jpg" alt="beverages">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Яблочный сок
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/juice.jpg" alt="juice">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Кока-Кола
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/cola.jpg" alt="cola">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Пепси
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/pepsi.jpg" alt="pepsi">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Коктейли
+                            </div>
+                            <img src="./img/cocktails.jpg" alt="cocktails">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Manhattan
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/manhattan.jpg" alt="manhattan">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Old Fashioned
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/old_fashioned.jpg" alt="old_fashioned">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Averna Tonic
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/averna.jpg" alt="averna">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Крепкий алкоголь
+                            </div>
+                            <img src="./img/strong.jpeg" alt="strong">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Виски
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/whiskey.jpg" alt="whiskey">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Ром
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/rum.jpg" alt="rum">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Ликер
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/liquor.jpg" alt="liquor">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Вино
+                            </div>
+                            <img src="./img/wine.jpg" alt="wine">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Fragolino
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/fragolino.jpg" alt="fragolino">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Valpolicella
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/valpolicella.jpg" alt="valpolicella">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Пиво
+                            </div>
+                            <img src="./img/beer.jpg" alt="beer">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bar__products products">
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Corona
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/corona.jpg" alt="corona">
+                        </div>
+                    </div>
+                    <div class="bar__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Голден Эль
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/golden_ale.jpg" alt="golden_ale">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="main__content">
-                <div class="main__content-title">Салаты</div>
-                <img class="main__img" src="./img/salads.jpg" alt="Salads">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
+
+            <div class="kitchen__types type hide">
+                <div class="kitchen__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Супы
+                            </div>
+                            <img src="./img/soups.jpg" alt="soups">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
+                </div>
+
+
+                <div class="kitchen__products products">
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Рамен с курицей
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/ramen_noodles.jpg" alt="ramen_noodles">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Бульон с домашней лапшой
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/bouillon.jpg" alt="bouillon">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
+                </div>
+
+
+                <div class="kitchen__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Основные блюда
+                            </div>
+                            <img src="./img/main_dishes.jpg" alt="main_dishes">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__products products">
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Чикен паста
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/chicken_pasta.jpg" alt="chicken_pasta">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Поке с угрем
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/poke.jpg" alt="poke">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Паста 4 сыра
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/cheese_pasta.jpg" alt="cheese_pasta">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Салаты
+                            </div>
+                            <img src="./img/salads.jpg" alt="salads">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__products products">
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Цезарь
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/caesar.jpg" alt="caesar">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Греческий классический
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/greek_classic.jpg" alt="greek_classic">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Салат с лососем
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/salmon_salad.jpg" alt="salmon_salad">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Закуски
+                            </div>
+                            <img src="./img/snacks.jpg" alt="snacks">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__products products">
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Камамбер в панировке
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/breaded_camembert.jpg" alt="breaded_camembert">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Наггетсы
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/nuggets.jpg" alt="nuggets">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Прошутто с гренками
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/prosciutto.jpg" alt="prosciutto">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Десерты
+                            </div>
+                            <img src="./img/desserts.jpg" alt="desserts">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__products products">
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Сырники
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/cheesecakes.jpg" alt="cheesecakes">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Яблочный наполеон
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/apple_napoleon.jpg" alt="apple_napoleon">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Япония
+                            </div>
+                            <img src="./img/japan.jpg" alt="japan">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="kitchen__products products">
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Роллы
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/rolls.jpg" alt="rolls">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Салаты
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/japanese_salads.jpg" alt="japanese_salads">
+                        </div>
+                    </div>
+                    <div class="kitchen__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Суши
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/sushi.jpg" alt="sushi">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="main__content">
-                <div class="main__content-title">Супы</div>
-                <img class="main__img" src="./img/soups.jpg" alt="Soups">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
+
+            <div class="hookah__types type hide">
+                <div class="hookah__types-item types-item">
+                    <div class="types-item-content">
+                        <div class="types-item-img">
+                            <div class="types-mask">
+                            </div>
+                            <div class="types-mask-title">
+                                Табаки
+                            </div>
+                            <img src="./img/tobacco.jpg" alt="bar">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Основные блюда</div>
-                <img class="main__img" src="./img/main_dishes.jpg" alt="Main dishes">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Гарниры</div>
-                <img class="main__img" src="./img/side_dishes.jpg" alt="Side dishes">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Бургеры</div>
-                <img class="main__img" src="./img/burgers.jpg" alt="Burgers">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Десерты</div>
-                <img class="main__img" src="./img/dessert.jpg" alt="Dessert">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Япония</div>
-                <img class="main__img" src="./img/japan.jpg" alt="Japan">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Ланч</div>
-                <img class="main__img" src="./img/lunch.jpg" alt="Lunch">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Кофе</div>
-                <img class="main__img" src="./img/coffee.jpg" alt="Coffee">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Чай</div>
-                <img class="main__img" src="./img/tea.jpg" alt="Tea">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Горячие напитки</div>
-                <img class="main__img" src="./img/hot_drinks.jpg" alt="Hot drinks">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Напитки</div>
-                <img class="main__img" src="./img/beverages.jpg" alt="Beverages">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Холодные безалкогольные</div>
-                <img class="main__img" src="./img/cold.jpg" alt="Cold non-alcoholic">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Крепкий алкоголь</div>
-                <img class="main__img" src="./img/strong_alcohol.jpg" alt="Strong alcohol">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Вино</div>
-                <img class="main__img" src="./img/wine.jpg" alt="Wine">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Пиво</div>
-                <img class="main__img" src="./img/beer.jpg" alt="Beer">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Коктейли</div>
-                <img class="main__img" src="./img/cocktails.jpg" alt="Cocktails">
-                <div class="content__items">
-                    <div class="item">
-                        <div class="item-title">Теплый салат с уткой и грушей</div>
-                        <div class="item-descr">Микс салата, сыр дор-блю, карамелизированная груша, утка конфи,
-                            помидор
-                            чери, малинова бальзамическая заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">350 g</div>
-                            <div class="item-price">159 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь</div>
-                        <div class="item-descr">Обжаренное куриное филе, лист салата, бекон, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">129 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Цезарь с тигровыми креветками</div>
-                        <div class="item-descr">Обжаренные тигровые креветки, лист салата, томаты черри и яйцо
-                            пашот.
-                            Заправляется соусом цезарь и при подаче посыпается пармезаном.</div>
-                        <div class="item__info">
-                            <div class="item-amount">150 g</div>
-                            <div class="item-price line"><div>165 ₴</div><span class="sale">135 ₴</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Салат с Прошутто и сыром Горгонзола</div>
-                        <div class="item-descr">Слайсы Прошутто, лист салата, болгарский перец, томаты черри, сыр
-                            дор-блю и имбирная заправка.</div>
-                        <div class="item__info">
-                            <div class="item-amount">230 g</div>
-                            <div class="item-price">155 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">Кальяны</div>
-                <img class="main__img" src="./img/hookahs.jpg" alt="Hookahs">
-                <div class="content__items">
-                    <div class="item hookah">
-                        <div class="item__info">
-                            <div class="item-title">Serbetli</div>
-                            <div class="item-price">179 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item hookah">
-                        <div class="item__info">
-                            <div class="item-title">Element</div>
-                            <div class="item-price">249 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item hookah">
-                        <div class="item__info">
-                            <div class="item-title">Tangiers</div>
-                            <div class="item-price">249 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item hookah">
-                        <div class="item__info">
-                            <div class="item-title">Daily Hookah</div>
-                            <div class="item-price">249 ₴</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__content">
-                <div class="main__content-title">IQOS</div>
-                <img class="main__img" src="./img/iqos.jpg" alt="IQOS">
-                <div class="content__items">
-                    <div class="item iqos">
-                        <div class="item__info">
-                            <div class="item-title">Bronze Selection</div>
-                            <div class="item-price">55 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item iqos">
-                        <div class="item__info">
-                            <div class="item-title">Bronze Selection</div>
-                            <div class="item-price">55 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item iqos">
-                        <div class="item__info">
-                            <div class="item-title">Bronze Selection</div>
-                            <div class="item-price">55 ₴</div>
-                        </div>
-                    </div>
-                    <div class="item iqos">
-                        <div class="item__info">
-                            <div class="item-title">Bronze Selection</div>
-                            <div class="item-price">55 ₴</div>
+                <div class="hookah__products products">
+                    <div class="hookah__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Serbetli
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/serbetli.jpg" alt="bar">
+                        </div>
+                    </div>
+                    <div class="hookah__product product">
+                        <div class="product-item-img">
+                            <div class="product-mask">
+                            </div>
+                            <div class="product-mask-title">
+                                Daily Hookah
+                            </div>
+                            <div class="product-mask-price">
+                                100₴
+                            </div>
+                            <img src="./img/products/daily_hookah.jpg" alt="bar">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="top__info">
-            <img src="./icons/footer_logo.svg" alt="Logo">
-            <div class="info__contacts">
-                <div class="number">+38(098)765-54-32</div>
-                <div class="address">г. Киев, ул. Крещатик, 22</div>
-            </div>
-        </div>
-        <div class="bottom__info">
-            <div class="info__text">
-                Menu.2020
-            </div>
-            <div class="social-networks">
-                <a href="#" class="facebook"><img src="./icons/facebook.svg" alt="Facebook"></a>
-                <a href="#" class="instagram"><img src="./icons/instagram.svg" alt="instagram"></a>
-            </div>
-        </div>
-    </footer>
     <script src="./js/main.js"></script>
 </body>
 
