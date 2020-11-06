@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".nav__item"),
-    nav = document.querySelectorAll(".nav"),
-    tabsContent = document.querySelectorAll(".products__list"),
-    tabsParent = document.querySelectorAll(".nav__content"),
+    tabsContent = document.querySelectorAll(".page"),
+    tabsParent = document.querySelector(".nav"),
+    productMenuContent = document.querySelectorAll(".item__content"),
+    productItems = document.querySelectorAll(".product__item"),
     menuItems = document.querySelectorAll(".menu__item"),
-    pages = document.querySelectorAll(".categories__page"),
-    menu = document.querySelector(".home__content"),
-    menuBtn = document.querySelector(".menu__btn"),
-    headerTitle = document.querySelector(".header__title");
+    backArrows = document.querySelectorAll(".back_arrow"),
+    pageMenu = document.querySelectorAll(".menu");
 
-  const tabsActive = [0, 9, 18, 19];
-  const titles = ["Кухня", "Бар", "Кальян", "IQOS"];
+  let page = 0;
+  const classNames = ["cultery", "soda", "home", "hookah", "pipe"];
 
   const hideTabContent = () => {
     tabsContent.forEach((item) => {
@@ -19,133 +18,77 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     tabs.forEach((tab) => {
-      tab.classList.remove("active");
+      tab.parentNode.classList.remove("nav__item-active", "fade-menu");
     });
   };
 
   const showTabContent = (i = 0) => {
     tabsContent[i].classList.remove("hide");
     tabsContent[i].classList.add("show", "fade");
-    tabs[i].classList.add("active");
+    tabs[i].parentNode.classList.add("nav__item-active");
+    tabs[i].parentNode.classList.add(classNames[i], "fade-menu");
   };
 
-  const showPage = (i) => {
-    menu.classList.remove("show", "fade");
-    menu.classList.add("hide");
-    pages[i].classList.remove("hide");
-    pages[i].classList.add("show", "fade");
+  const showContent = (elem) => {
+    elem.classList.remove("hide");
+    elem.classList.add("show", "fade");
   };
 
-  const hidePages = () => {
-    pages.forEach((page) => {
-      page.classList.remove("show", "fade");
-      page.classList.add("hide");
-    });
-
-    menu.classList.remove("hide");
-    menu.classList.add("show", "fade");
+  const hideContent = (elem) => {
+    elem.classList.remove("show", "fade");
+    elem.classList.add("hide");
   };
 
-  const scrollRight = (tab, i) => {
-    return (
-      tabsParent[i].scrollLeft +
-      tab.getBoundingClientRect().x -
-      tabsParent[i].clientWidth / 2 +
-      tab.clientWidth / 2 -
-      tabsParent[i].offsetLeft
-    );
-  };
+  showTabContent(2);
 
-  const scrollLeft = (tab, i) => {
-    return (
-      tabsParent[i].scrollLeft -
-      (nav[i].clientWidth / 2 -
-        tab.getBoundingClientRect().x -
-        tab.clientWidth +
-        tab.clientWidth / 2)
-    );
-  };
+  tabsParent.addEventListener("click", (e) => {
+    const target = e.target;
 
-  hideTabContent();
-  showTabContent();
+    if (target && target.classList.contains("nav__item")) {
+      tabs.forEach((tab, i) => {
+        if (target == tab) {
+          hideTabContent();
+          showTabContent(i);
+          window.scrollTo(0, 0);
+          productItems.forEach((item) => {
+            item.classList.remove("product__item-active");
+          });
+          productMenuContent.forEach((menu) => {
+            hideContent(menu);
+          });
+          showContent(pageMenu[page]);
+        }
+      });
+    }
+  });
 
-  Math.easeInOutQuad = (t, b, c, d) => {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  };
-
-  const scrollTo = (element, to, duration) => {
-    let start = element.scrollLeft,
-      change = to - start,
-      currentTime = 0,
-      increment = 1;
-
-    let animateScroll = function () {
-      currentTime += increment;
-      let val = Math.easeInOutQuad(currentTime, start, change, duration);
-      element.scrollLeft = val;
-      if (currentTime < duration) {
-        setTimeout(animateScroll, increment);
-      }
-    };
-    animateScroll();
-  };
-
-  tabsParent.forEach((tabsParentItem, index) => {
-    tabsParentItem.addEventListener("click", (e) => {
-      const target = e.target;
-
-      if (target && target.classList.contains("nav__item")) {
-        tabs.forEach((tab, i) => {
-          if (target === tab) {
-            hideTabContent();
-            showTabContent(i);
-
-            if (tab.getBoundingClientRect().x > nav[index].clientWidth / 2) {
-              scrollTo(tabsParentItem, scrollRight(tab, index), 50);
-            } else {
-              scrollTo(tabsParentItem, scrollLeft(tab, index), 50);
-            }
-
-            document.querySelectorAll(".slick-track").forEach((item) => {
-              item.style.transform = "translate3d(15px, 0px, 0px)";
-            });
-          }
-        });
-      }
+  productItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("product__item-active");
     });
   });
 
   menuItems.forEach((item, i) => {
     item.addEventListener("click", () => {
-      hidePages();
-      showPage(i);
-      document.querySelectorAll(".slick-track").forEach((item) => {
-        item.style.transform = "translate3d(15px, 0px, 0px)";
+      pageMenu.forEach((menu, index) => {
+        if (menu === item.parentNode) {
+          page = index;
+        }
       });
-      showTabContent(tabsActive[i]);
-      tabsParent[i].scrollLeft = 0;
-      headerTitle.textContent = titles[i];
+      hideContent(item.parentNode);
+      showContent(productMenuContent[i]);
+      window.scrollTo(0, 0);
     });
   });
 
-  hidePages();
-
-  menuBtn.addEventListener("click", () => {
-    hidePages();
-    hideTabContent();
-    headerTitle.textContent = "Меню";
+  backArrows.forEach((arrow, i) => {
+    arrow.addEventListener("click", () => {
+      hideContent(productMenuContent[i]);
+      showContent(pageMenu[page]);
+      window.scrollTo(0, 0);
+      productItems.forEach((item) => {
+        item.classList.remove("product__item-active");
+      });
+    });
   });
-});
-
-$(".products__list").slick({
-  infinite: false,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  centerMode: true,
-  variableWidth: true,
-  dots: false,
-  arrows: false,
 });
