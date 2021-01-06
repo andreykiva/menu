@@ -225,6 +225,8 @@ label.actual-btn:hover {
     text-align: center;
     font-size: 32px;
     line-height: 1.4;
+    background-color: #eaedee;
+    padding-top: 20px;
 }
 
 .result .completely .get_completely {
