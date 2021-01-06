@@ -1,1 +1,140 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>UCSpin</title></head><body><div id="root"></div><script src="./bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Skin Match App</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <span>Skin Match App</span>
+        </div>
+    </header>
+    <main class="main">
+        <section class="app__info">
+            <div class="container">
+                <p class="info-text"><span>Skin Match App</span> ищет совпадения в нашей базе данных изображений и
+                    определяет
+                    приблизительный
+                    диагноз кожного заболевания.
+                </p>
+            </div>
+        </section>
+
+        <section class="instructions">
+            <h2 class="instructions-title">Инструкция</h2>
+            <div class="instructions__info">
+                <div class="container">
+                    <div class="steps">
+                        <div class="step__one step">
+                            <h4 class="step-title">Шаг 1.</h4>
+                            <p class="step-info">Ответьте на вопросы</p>
+                        </div>
+                        <div class="step__two step">
+                            <h4 class="step-title">Шаг 2.</h4>
+                            <p class="step-info">Сделайте 3-5 качественных фотографий
+                            </p>
+                            <ul class="info__list">
+                                <li class="list-item">Изображение должно быть в фокусе, при хорошем освещении и четко
+                                    центрированной
+                                    области.</li>
+                                <li class="list-item">Если это всего лишь одно повреждение, сделайте сфокусированный
+                                    крупный план.
+                                    Если
+                                    оно по всему телу, сделайте сфокусированное изображение, которое лучше всего
+                                    показывает проблему.</li>
+                                <li class="list-item">Не рисуйте на изображении. Не указывайте пальцем на больное место.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="step__three step">
+                            <h4 class="step-title">Шаг 3.</h4>
+                            <p class="step-info">Нажмите на кнопку ОК</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form">
+            <div class="container">
+                <form class="discover">
+                    <div class="form-group">
+                        <label for="gender">Ваш пол:</label>
+                        <select id="gender">
+                            <option selected value="male">Мужской</option>
+                            <option value="female">Женский</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Ваш возраст:</label>
+                        <input type="number" id="age" min="1" value="25">
+                    </div>
+                    <div class="form-group">
+                        <label for="itching">Есть у вас зуд?</label>
+                        <select id="itching">
+                            <option selected value="no">Нет</option>
+                            <option value="moderate">Умеренный зуд</option>
+                            <option value="severe">Сильный зуд</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pain">Есть у вас боль?</label>
+                        <select id="pain">
+                            <option selected value="no">Нет</option>
+                            <option value="slight">Слабая боль</option>
+                            <option value="severe">Сильная боль</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Сколько уже длится ваш дискомфорт на коже?</label>
+                        <select id="duration">
+                            <option selected value="less_than_a_week">Меньше недели</option>
+                            <option value="less_than_a_month">Меньше месяца</option>
+                            <option value="less_than_a_year">Меньше года</option>
+                            <option value="more_than_a_year">Больше года</option>
+                        </select>
+                    </div>
+                    <div class="form-group invalid">
+                        <label for="email">Ваш email:</label>
+                        <input type="email" id="email" placeholder="Введите email">
+                        <div class="invalid-field">Неправильный email! Введите заново!</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" id="actual-btn" hidden multiple />
+                        <label for="actual-btn" class="actual-btn">Загрузите 3-5 фото</label>
+                        <span id="file-chosen"></span>
+                    </div>
+
+                    <div class="form-group invalid">
+                        <button type="submit" class="submit_btn">ОК</button>
+                        <div class="invalid-field">Неправильный email! Введите заново!</div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="result">
+            <div class="container">
+                <div class="result-info">
+                    В таблице нет самых вероятных имен кожных состояний. Чтобы получить полную таблицу, оплатите 100
+                    рублей и мы отправим вам на почту полную таблицу
+                </div>
+                <form class="completely">
+                    <button type="submit" class="get_completely">Оплатить полный результат</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
