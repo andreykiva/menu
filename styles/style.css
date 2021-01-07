@@ -42,8 +42,8 @@ header.header {
 .app__info {
     padding-top: 20px;
     padding-bottom: 30px;
-   display: flex;
-   justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .app__info img {
@@ -177,6 +177,12 @@ header.header {
     display: none;
 }
 
+.warning {
+    text-align: left;
+    color: rgb(196, 79, 79);
+    font-size: 14px;
+}
+
 .form-group.invalid .invalid-field {
     display: block;
     padding-top: 10px;
@@ -208,6 +214,49 @@ label.actual-btn:hover {
     font-weight: 500;
 }
 
+.details {
+    text-align: right;
+    color: rgb(31, 31, 31);
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    position: relative;
+}
+
+
+.details:hover {
+    color: rgb(0, 126, 243);
+}
+
+.details__block {
+    background-color: #eaedee;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+img.details-img {
+    max-width: 200px;
+}
+
+.more {
+    display: flex;
+    justify-content: space-between;
+}
+
+.files {
+    text-align: left;
+    color: rgb(0, 158, 79);
+    font-size: 14px;
+}
+
 .submit_btn {
     width: 100%;
     height: 56px;
@@ -230,10 +279,10 @@ label.actual-btn:hover {
 }
 
 .result {
+    display: none;
     text-align: center;
     font-size: 32px;
     line-height: 1.4;
-    background-color: #eaedee;
     padding-top: 20px;
 }
 

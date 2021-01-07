@@ -21,12 +21,12 @@
     <main class="main">
         <div class="container">
             <section class="app__info">
-                    <p class="info-text"><span>Skin Match App</span> ищет совпадения в нашей базе данных изображений и
-                        определяет
-                        приблизительный
-                        диагноз кожного заболевания.
-                    </p>
-                    <img src="./images/main_img.png" alt="Main image">
+                <p class="info-text"><span>Skin Match App</span> ищет совпадения в нашей базе данных изображений и
+                    определяет
+                    приблизительный
+                    диагноз кожного заболевания.
+                </p>
+                <img src="./images/main_img.png" alt="Main image">
             </section>
         </div>
 
@@ -67,21 +67,21 @@
 
         <section class="form">
             <div class="container">
-                <form class="discover">
+                <form class="discover" name="discover">
                     <div class="form-group">
                         <label for="gender">Ваш пол:</label>
-                        <select id="gender">
+                        <select id="gender" name="gender">
                             <option selected value="male">Мужской</option>
                             <option value="female">Женский</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="age">Ваш возраст:</label>
-                        <input type="number" id="age" min="1" value="25">
+                        <input type="number" id="age" min="1" value="25" name="age" required>
                     </div>
                     <div class="form-group">
                         <label for="itching">Есть у вас зуд?</label>
-                        <select id="itching">
+                        <select id="itching" name="itching">
                             <option selected value="no">Нет</option>
                             <option value="moderate">Умеренный зуд</option>
                             <option value="severe">Сильный зуд</option>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="form-group">
                         <label for="pain">Есть у вас боль?</label>
-                        <select id="pain">
+                        <select id="pain" name="pain">
                             <option selected value="no">Нет</option>
                             <option value="slight">Слабая боль</option>
                             <option value="severe">Сильная боль</option>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="form-group">
                         <label for="duration">Сколько уже длится ваш дискомфорт на коже?</label>
-                        <select id="duration">
+                        <select id="duration" name="duration">
                             <option selected value="less_than_a_week">Меньше недели</option>
                             <option value="less_than_a_month">Меньше месяца</option>
                             <option value="less_than_a_year">Меньше года</option>
@@ -106,18 +106,24 @@
                     </div>
                     <div class="form-group invalid">
                         <label for="email">Ваш email:</label>
-                        <input type="email" id="email" placeholder="Введите email">
+                        <input type="email" id="email" placeholder="Введите email" required name="email">
                         <div class="invalid-field">Неправильный email! Введите заново!</div>
                     </div>
                     <div class="form-group">
-                        <input type="file" id="actual-btn" hidden multiple />
+                        <input type="file" id="actual-btn" hidden multiple required name="files"/>
                         <label for="actual-btn" class="actual-btn">Загрузите 3-5 фото</label>
-                        <span id="file-chosen"></span>
+                        <div class="more">
+                            <span id="file-chosen"></span>
+                            <div class="details"><span class="details-text">Подробнее</span>   
+                                <div class="details__block">
+                                    <img src="./images/right.jpg" alt="Details" class="details-img">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group invalid">
+                    <div class="form-group">
                         <button type="submit" class="submit_btn">ОК</button>
-                        <div class="invalid-field">Неправильный email! Введите заново!</div>
                     </div>
                 </form>
             </div>
