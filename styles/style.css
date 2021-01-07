@@ -238,9 +238,7 @@ label.actual-btn:hover {
     display: none;
 }
 
-.show {
-    display: block;
-}
+
 
 img.details-img {
     max-width: 200px;
@@ -299,4 +297,12 @@ img.details-img {
     outline: none;
     border-radius: 5px;
     border: none;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
