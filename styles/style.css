@@ -40,14 +40,22 @@ header.header {
 }
 
 .app__info {
-    padding: 90px 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.app__info img {
+    max-width: 45%;
 }
 
 .app__info .info-text {
+    padding-top: 90px;
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.1;
-    max-width: 750px;
+    max-width: 550px;
     color: rgb(36, 35, 35);
 }
 
