@@ -50,6 +50,10 @@
         max-width: 100%;
         padding-right: 30px;
     }
+
+    table {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 400px) {

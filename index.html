@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/media.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -126,14 +125,32 @@
                         <button type="submit" class="submit_btn">ОК</button>
                     </div>
                 </form>
+
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </section>
 
         <section class="result">
             <div class="container">
+                <table class="results__table">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Вероятность</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
                 <div class="result-info">
-                    В таблице нет самых вероятных имен кожных состояний. Чтобы получить полную таблицу, оплатите 100
-                    рублей и мы отправим вам на почту полную таблицу
+                    В таблице нет самых вероятных имен кожных состояний. Чтобы получить полную таблицу, оплатите
+                    <span>100 рублей</span>
+                    и мы отправим вам на почту полную таблицу
                 </div>
                 <form class="completely">
                     <button type="submit" class="get_completely">Оплатить полный результат</button>
@@ -141,6 +158,7 @@
             </div>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

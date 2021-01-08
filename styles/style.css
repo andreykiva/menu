@@ -9,12 +9,17 @@ html {
 }
 
 @font-face {
-    font-family: Oswald;
-    src: url(../fonts/Oswald-Regular.ttf)
+    font-family: Nunito-Bold;
+    src: url(../fonts/Nunito-Bold.ttf)
+}
+
+@font-face {
+    font-family: Nunito-SemiBold;
+    src: url(../fonts/Nunito-SemiBold.ttf)
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito-SemiBold, sans-serif;
 }
 
 .container {
@@ -31,6 +36,7 @@ header.header {
     justify-content: center;
     font-size: 32px;
     font-weight: 700;
+    font-family: Nunito-Bold, sans-serif;
 }
 
 .logo {
@@ -53,6 +59,7 @@ header.header {
 .app__info .info-text {
     padding-top: 90px;
     font-size: 2.25rem;
+    font-family: Nunito-Bold, sans-serif;
     font-weight: 700;
     line-height: 1.1;
     max-width: 550px;
@@ -125,12 +132,17 @@ header.header {
 .form {
     padding: 90px 0;
     width: 100%;
+    min-height: 300px;
 }
 
 .form form {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.form form.hide {
+    display: none;
 }
 
 .form-group {
@@ -238,8 +250,6 @@ label.actual-btn:hover {
     display: none;
 }
 
-
-
 img.details-img {
     max-width: 200px;
 }
@@ -284,6 +294,10 @@ img.details-img {
     padding-top: 20px;
 }
 
+.result-info span {
+    color: rgb(0, 158, 79);
+}
+
 .result .completely .get_completely {
     margin: 30px 0 50px;
     width: 100%;
@@ -297,6 +311,86 @@ img.details-img {
     outline: none;
     border-radius: 5px;
     border: none;
+}
+
+.lds-ring {
+    display: none;
+    margin: 0 auto;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #6b5faf;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #6b5faf transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+table {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    font-size: 16px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+th,
+td:first-child {
+    background: #c9e0f5;
+    padding: 10px 20px;
+}
+
+th,
+td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+    width: 100%;
+    max-width: 300px;
+    vertical-align: middle;
+}
+
+td {
+    background: #D8E6F3;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
 }
 
 .show {

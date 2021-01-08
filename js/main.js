@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const formSection = document.querySelector("section.form");
     const detailsText = document.querySelector(".details-text");
     const detailsInfo = document.querySelector(".details__block");
+    const loader = document.querySelector(".lds-ring");
+    const tbody = document.getElementById("tbody");
     const form = document.forms.discover;
 
     const validateFileUpload = (files) => {
@@ -35,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const show = (el) => {
         el.classList.remove("hide");
-        el.classList.add("show")
-    }
+        el.classList.add("show");
+    };
 
     const hide = (el) => {
         el.classList.remove("show");
-        el.classList.add("hide")
-    }
+        el.classList.add("hide");
+    };
 
     actualBtn.addEventListener("change", function () {
         if (this.files.length < 3 || this.files.length > 5) {
@@ -65,10 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const validFiles = validateFileUpload(fileInput.files);
         const validEmail = validateEmail(emailInput.value);
 
-        for (let i = 0; i < fileInput.files.length; i++) {
-            console.log(fileInput.files[i]);
-        }
-
         if (!validEmail) {
             return formGroupEmail.classList.add("invalid");
         } else {
@@ -81,23 +79,85 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const formData = new FormData(form);
-        const data = {};
 
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
+        //----------------------------------------------Делаем запрос
+        hide(form);
+        show(loader);
 
-        hide(formSection)
-        show(resultMess);
+        const res = {
+            diseases: {
+                Abscess: "131",
+                Acne: "1233",
+                Epidermalcyst: "0.127",
+                Folliculitis: "0.121",
+                Furuncle: "0.122",
+                Herpessimplex: "0.123",
+                Herpeszoster: "0.124",
+                Inflammedcyst: "0.125",
+                Insectbite: "0.126",
+                Xeroticeczema: "77777",
+            },
+        };
 
-        fetch("/api/find", {
-            method: "POST",
-            body: data,
-        })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => console.error(error));
+        const diseasesRu = {
+            Abscess: "Абсцесс",
+            Acne: "Акне",
+            Epidermalcyst: "Эпидермальная киста",
+            Folliculitis: "Фолликулит",
+            Furuncle: "Фурункул",
+            Herpessimplex: "Простой герпес",
+            Herpeszoster: "Опоясывающий герпес",
+            Inflammedcyst: "Воспаленная киста",
+            Insectbite: "Укус насекомого",
+            Xeroticeczema: "Ксеротическая экзема",
+        };
+
+        const diseases = [];
+
+        for (let key in res.diseases) {
+            diseases.push({
+                name: key,
+                value: res.diseases[key],
+            });
+        }
+
+        diseases.sort((a, b) => +b.value - +a.value);
+
+        setTimeout(() => {
+            hide(formSection);
+            show(resultMess);
+
+            diseases.forEach((item, i) => {
+                if (i === 0 || i === 1) {
+                    diseasesRu[item.name] = diseasesRu[item.name].replace(
+                        /[\s\S]/g,
+                        "*"
+                    );
+                }
+
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${diseasesRu[item.name]}</td>
+                        <td>${item.value}</td>
+                    </tr>
+                `;
+            });
+        }, 2000);
+
+        // $.ajax({
+        //     url: "find",
+        //     type: "POST",
+        //     cache: false,
+        //     processData: false,
+        //     contentType: false,
+        //     enctype: "multipart/form-data",
+        //     data: formData,
+        //     success: function (response) {
+        //         hide(formSection);
+        //         show(resultMess);
+
+        //     },
+        // });
     });
 
     detailsText.addEventListener("click", () => {
