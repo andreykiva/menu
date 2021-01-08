@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const tbody = document.getElementById("tbody");
     const form = document.forms.discover;
 
+    const images = [];
+
+    const diseasesRu = {
+        Abscess: "Абсцесс",
+        Acne: "Акне",
+        Epidermalcyst: "Эпидермальная киста",
+        Folliculitis: "Фолликулит",
+        Furuncle: "Фурункул",
+        Herpessimplex: "Простой герпес",
+        Herpeszoster: "Опоясывающий герпес",
+        Inflammedcyst: "Воспаленная киста",
+        Insectbite: "Укус насекомого",
+        Xeroticeczema: "Ксеротическая экзема",
+    };
+
     const validateFileUpload = (files) => {
         for (let i = 0; i < files.length; i++) {
             const name = files[i].name;
@@ -45,19 +60,39 @@ document.addEventListener("DOMContentLoaded", () => {
         el.classList.add("hide");
     };
 
-    actualBtn.addEventListener("change", function () {
-        if (this.files.length < 3 || this.files.length > 5) {
-            fileChosen.innerHTML =
-                "<p class='warning'>Загрузите от 3 до 5 файлов!</p>";
-            this.files.length = 0;
-        } else {
-            const isValid = validateFileUpload(this.files);
+    // actualBtn.addEventListener("change", function () {
+    //     if (this.files.length < 3 || this.files.length > 5) {
+    //         fileChosen.innerHTML =
+    //             "<p class='warning'>Загрузите от 3 до 5 файлов!</p>";
+    //         this.files.length = 0;
+    //     } else {
+    //         const isValid = validateFileUpload(this.files);
 
-            if (isValid) {
-                fileChosen.innerHTML = `<p class="files">${this.files.length}/5 ✔</p>`;
-            } else {
-                fileChosen.innerHTML = `<p class="warning">Загрузите изображения!</p>`;
+    //         if (isValid) {
+    //             for (let i = 0; i < this.files.length; i++) {
+    //                 images.push(this.files[i]);
+    //             }
+    //             fileChosen.innerHTML = `<p class="files">${images.length}/5</p>`;
+    //         } else {
+    //             fileChosen.innerHTML = `<p class="warning">Загрузите изображения!</p>`;
+    //         }
+    //     }
+    // });
+
+    actualBtn.addEventListener("change", function () {
+        const isValid = validateFileUpload(this.files);
+
+        if (isValid) {
+            for (let i = 0; i < this.files.length; i++) {
+                if (images.length === 5) {
+                    break;
+                }
+                images.push(this.files[i]);
             }
+
+            fileChosen.innerHTML = `<p class="files">${images.length}/5</p>`;
+        } else {
+            fileChosen.innerHTML = `<p class="warning">Загрузите изображения!</p>`;
         }
     });
 
@@ -75,10 +110,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!validFiles) {
             return (fileChosen.innerHTML =
+                "<p class='warning'>Загрузите изображения!</p>");
+        }
+
+        if (images.length < 3 || images.length > 5) {
+            return (fileChosen.innerHTML =
                 "<p class='warning'>Загрузите от 3 до 5 файлов!</p>");
         }
 
         const formData = new FormData(form);
+
+        formData.delete("files");
+
+        for (let i = 0; i < images.length; i++) {
+            formData.append("files", images[i]);
+        }
 
         //----------------------------------------------Делаем запрос
         hide(form);
@@ -97,19 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 Insectbite: "0.126",
                 Xeroticeczema: "77777",
             },
-        };
-
-        const diseasesRu = {
-            Abscess: "Абсцесс",
-            Acne: "Акне",
-            Epidermalcyst: "Эпидермальная киста",
-            Folliculitis: "Фолликулит",
-            Furuncle: "Фурункул",
-            Herpessimplex: "Простой герпес",
-            Herpeszoster: "Опоясывающий герпес",
-            Inflammedcyst: "Воспаленная киста",
-            Insectbite: "Укус насекомого",
-            Xeroticeczema: "Ксеротическая экзема",
         };
 
         const diseases = [];
