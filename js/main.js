@@ -26,6 +26,39 @@ document.addEventListener("DOMContentLoaded", () => {
         Inflammedcyst: "Воспаленная киста",
         Insectbite: "Укус насекомого",
         Xeroticeczema: "Ксеротическая экзема",
+        Skintag: "Бородавка",
+        "Nonspecific(normal)": "Неспецифическая (нормальная)",
+        Hemangioma: "Гемангиома",
+        Angiokeratoma: "Ангиокератома",
+        CherryHemangioma: "Вишневая гемангиома",
+        Dilatedpore: "Расширенные поры",
+        Dysplasticnevus: "Диспластический невус",
+        Keratosispilaris: "Фолликулярный кератоз",
+        Melanocyticnevus: "Меланоцитарный невус",
+    };
+
+    const wikiLinks = {
+        Abscess: "https://ru.wikipedia.org/wiki/Абсцесс",
+        Acne: "https://ru.wikipedia.org/wiki/Акне",
+        Epidermalcyst:
+            "https://amclinic.ru/med-spravochnik/epidermalnaya_kista",
+        Folliculitis: "https://ru.wikipedia.org/wiki/Атерома_кожи",
+        Furuncle: "https://ru.wikipedia.org/wiki/Фурункул",
+        Herpessimplex: "https://ru.wikipedia.org/wiki/Простой_герпес",
+        Herpeszoster: "https://ru.wikipedia.org/wiki/Опоясывающий_лишай",
+        Inflammedcyst: `https://www.msdmanuals.com/ru/профессиональный/дерматологическая-патология/доброкачественные-опухоли,-новообразования-кожи-и-сосудистые-поражения/кожные-кисты`,
+        Insectbite: "https://ru.wikipedia.org/wiki/Ужаления_и_укусы_насекомых",
+        Xeroticeczema:
+            "https://www.netinbag.com/ru/health/what-is-xerotic-eczema.html",
+        Skintag: "https://ru.wikipedia.org/wiki/Бородавка",
+        Hemangioma: "https://ru.wikipedia.org/wiki/Гемангиома",
+        Angiokeratoma: "https://ru.wikipedia.org/wiki/Ангиокератома",
+        CherryHemangioma: "https://www.healthfrom.com/ru/disease/h-2086.html",
+        Dilatedpore: "http://womanwiki.ru/w/Расширенные_поры",
+        Dysplasticnevus: "https://ru.wikipedia.org/wiki/Родинка",
+        Keratosispilaris: "https://ru.wikipedia.org/wiki/Волосяной_лишай",
+        Melanocyticnevus:
+            "https://mesedclinic.ru/dermatologiya/nevus/melanotsitarnyy-nevus/",
     };
 
     const validateFileUpload = (files) => {
@@ -60,24 +93,40 @@ document.addEventListener("DOMContentLoaded", () => {
         el.classList.add("hide");
     };
 
-    // actualBtn.addEventListener("change", function () {
-    //     if (this.files.length < 3 || this.files.length > 5) {
-    //         fileChosen.innerHTML =
-    //             "<p class='warning'>Загрузите от 3 до 5 файлов!</p>";
-    //         this.files.length = 0;
-    //     } else {
-    //         const isValid = validateFileUpload(this.files);
+    const nameVerification = (name, ruName, wikiLink) => {
+        if (ruName && wikiLink) {
+            return `<a href=${wikiLinks[name]} target="_blank">${diseasesRu[name]}</a>`;
+        } else if (ruName && !wikiLink) {
+            return `${diseasesRu[name]}`;
+        } else {
+            return `${name}`;
+        }
+    };
 
-    //         if (isValid) {
-    //             for (let i = 0; i < this.files.length; i++) {
-    //                 images.push(this.files[i]);
-    //             }
-    //             fileChosen.innerHTML = `<p class="files">${images.length}/5</p>`;
-    //         } else {
-    //             fileChosen.innerHTML = `<p class="warning">Загрузите изображения!</p>`;
-    //         }
-    //     }
-    // });
+    const showDiseases = (diseases) => {
+        diseases.sort((a, b) => +b.value - +a.value);
+
+        diseases.forEach((item, i) => {
+            let name = item.name;
+
+            if (i === 0 || i === 1) {
+                name = item.name.replace(/[\s\S]/g, "*");
+            }
+
+            const validName = nameVerification(
+                name,
+                diseasesRu[name],
+                wikiLinks[name]
+            );
+
+            tbody.innerHTML += `
+                    <tr>
+                        <td>${validName}</td>
+                        <td>${item.value}</td>
+                    </tr>
+                `;
+        });
+    };
 
     actualBtn.addEventListener("change", function () {
         const isValid = validateFileUpload(this.files);
@@ -98,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sumbitBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        const diseases = [];
 
         const validFiles = validateFileUpload(fileInput.files);
         const validEmail = validateEmail(emailInput.value);
@@ -119,62 +169,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const formData = new FormData(form);
-
         formData.delete("files");
 
         for (let i = 0; i < images.length; i++) {
             formData.append("files", images[i]);
         }
 
-        //----------------------------------------------Делаем запрос
         hide(form);
         show(loader);
 
-        const res = {
-            diseases: {
-                Abscess: "131",
-                Acne: "1233",
-                Epidermalcyst: "0.127",
-                Folliculitis: "0.121",
-                Furuncle: "0.122",
-                Herpessimplex: "0.123",
-                Herpeszoster: "0.124",
-                Inflammedcyst: "0.125",
-                Insectbite: "0.126",
-                Xeroticeczema: "77777",
-            },
-        };
-
-        const diseases = [];
-
-        for (let key in res.diseases) {
-            diseases.push({
-                name: key,
-                value: res.diseases[key],
-            });
-        }
-
-        diseases.sort((a, b) => +b.value - +a.value);
+        //----------------------------------------------Делаем запрос
 
         setTimeout(() => {
+            const response = {
+                diseases: {
+                    Abscess: "0.123",
+                    Acne: "0.1234",
+                    Epidermalcyst: "0.121",
+                    Folliculitis: "0.1423",
+                    Furuncle: "0.2423",
+                    Herpessimplex: "0.3423",
+                    Herpeszoster: "0.14323",
+                    Inflammedcyst: "0.5423",
+                    Insectbite: "0.11423",
+                    "Nonspecific(normal)": "0.27"
+                },
+            };
             hide(formSection);
             show(resultMess);
 
-            diseases.forEach((item, i) => {
-                if (i === 0 || i === 1) {
-                    diseasesRu[item.name] = diseasesRu[item.name].replace(
-                        /[\s\S]/g,
-                        "*"
-                    );
-                }
+            for (let key in response.diseases) {
+                diseases.push({
+                    name: key,
+                    value: response.diseases[key],
+                });
+            }
 
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${diseasesRu[item.name]}</td>
-                        <td>${item.value}</td>
-                    </tr>
-                `;
-            });
+            showDiseases(diseases);
         }, 2000);
 
         // $.ajax({
@@ -189,6 +220,14 @@ document.addEventListener("DOMContentLoaded", () => {
         //         hide(formSection);
         //         show(resultMess);
 
+        //         for (let key in response.diseases) {
+        //             diseases.push({
+        //                 name: key,
+        //                 value: response.diseases[key],
+        //             });
+        //         }
+
+        //         showDiseases(diseases);
         //     },
         // });
     });

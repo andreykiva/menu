@@ -385,15 +385,46 @@ td {
     width: 100%;
     max-width: 300px;
     vertical-align: middle;
+    overflow: hidden;
 }
 
 td {
     background: #D8E6F3;
 }
 
+td a {
+    color: #000;
+}
+
+td a:hover {
+    color: rgb(11, 35, 78);
+}
+
 th:first-child,
 td:first-child {
     text-align: left;
+}
+
+footer.footer {
+    padding: 20px;
+    width: 100%;
+    background-color: #eaedee;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer p {
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: Nunito-Bold, sans-serif;
+}
+
+.footer a {
+    color: #6b5faf;
+}
+
+.footer a:hover {
+    color: #2600fd;
 }
 
 .show {
