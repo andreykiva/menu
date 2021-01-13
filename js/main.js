@@ -12,7 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = document.querySelector(".lds-ring");
     const tbody = document.getElementById("tbody");
     const form = document.forms.discover;
-
+    const accountInput = document.querySelector(
+        "form.completely input[name='account']"
+    );
+    const btn = document.querySelector(".get_completely");
     const images = [];
 
     const diseasesRu = {
@@ -175,38 +178,15 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("files", images[i]);
         }
 
+        accountInput.value = emailInput.value;
+
         hide(form);
         show(loader);
 
+        hide(formSection);
+        show(resultMess);
+
         //----------------------------------------------Делаем запрос
-
-        setTimeout(() => {
-            const response = {
-                diseases: {
-                    Abscess: "0.123",
-                    Acne: "0.1234",
-                    Epidermalcyst: "0.121",
-                    Folliculitis: "0.1423",
-                    Furuncle: "0.2423",
-                    Herpessimplex: "0.3423",
-                    Herpeszoster: "0.14323",
-                    Inflammedcyst: "0.5423",
-                    Insectbite: "0.11423",
-                    "Nonspecific(normal)": "0.27"
-                },
-            };
-            hide(formSection);
-            show(resultMess);
-
-            for (let key in response.diseases) {
-                diseases.push({
-                    name: key,
-                    value: response.diseases[key],
-                });
-            }
-
-            showDiseases(diseases);
-        }, 2000);
 
         // $.ajax({
         //     url: "find",
@@ -235,4 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
     detailsText.addEventListener("click", () => {
         detailsInfo.classList.toggle("show");
     });
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault()
+    })
+
 });

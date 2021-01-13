@@ -125,7 +125,11 @@
                         <button type="submit" class="submit_btn">ОК</button>
                     </div>
                 </form>
-                <div class="lds-ring"><div></div><div></div><div></div></div>
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </section>
 
@@ -146,15 +150,22 @@
                     <span>100 рублей</span>
                     и мы отправим вам на почту полную таблицу
                 </div>
-                <form class="completely">
+                <form class="completely" action="http://skinmatch.ru/home/signature">
+                    <input type="hidden" name="account" value="">
+                    <input type="hidden" name="sum" value="100">
+                    <input type="hidden" name="desc" value="Оплата полного результата диагностики">
                     <button type="submit" class="get_completely">Оплатить полный результат</button>
                 </form>
+
             </div>
         </section>
     </main>
-    
+
     <footer class="footer">
-        <p>Свяжитесь с нами: <a href="mailto:skinmatchapp@gmail.com">skinmatchapp@gmail.com</a></p>
+        <div class="footer__content">
+            <p>Свяжитесь с нами: <a href="mailto:skinmatchapp@gmail.com">skinmatchapp@gmail.com</a></p>
+            <a href="//freekassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/23.png" title="Приём оплаты на сайте картами"></a>
+        </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>

@@ -413,10 +413,19 @@ footer.footer {
     padding-top: 20px;
 }
 
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 .footer p {
     line-height: 1.5;
     font-weight: 600;
     font-family: Nunito-Bold, sans-serif;
+    text-align: left;
 }
 
 .footer a {
