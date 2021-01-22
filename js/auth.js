@@ -1,22 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const authBtn = document.querySelector(".auth-btn"),
-        loginField = document.querySelector(".form-group.login"),
+        usernameField = document.querySelector(".form-group.username"),
         passwordField = document.querySelector(".form-group.password"),
         authForm = document.querySelector(".auth__form");
 
-    const loginRe = /^[a-zA-Zа-яА-Я]+$/;
+    const usernameRe = /^[a-zA-Z]+$/;
     const passwordRe = /^[a-z0-9]+$/;
 
-    const validateLogin = (login) => {
-        const loginIsValid = loginRe.test(String(login).toLowerCase());
+    const validateUsername = (username) => {
+        const usernameIsValid = usernameRe.test(String(username).toLowerCase());
 
-        if (!loginIsValid) {
-            loginField.classList.add("invalid-field");
+        if (!usernameIsValid) {
+            usernameField.classList.add("invalid-field");
         } else {
-            loginField.classList.remove("invalid-field");
+            usernameField.classList.remove("invalid-field");
         }
 
-        return loginIsValid;
+        return usernameIsValid;
     };
 
     const validatePassword = (password) => {
@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formData = new FormData(authForm);
 
-        const loginIsValid = validateLogin(formData.get("login"));
+        const usernameIsValid = validateUsername(formData.get("username"));
         const passwordIsValid = validatePassword(formData.get("password"));
 
-        if (loginIsValid && passwordIsValid) {
+        if (usernameIsValid && passwordIsValid) {
             history.pushState({}, "", "./pages/control-panel.html");
             location.reload()
 

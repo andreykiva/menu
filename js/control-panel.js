@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const addhBtn = document.querySelector("button.add"),
         emailField = document.querySelector(".form-group.email"),
         passwordField = document.querySelector(".form-group.password"),
-        panelForm = document.querySelector(".panel__form");
+        panelForm = document.querySelector(".panel__form"),
+        allBtn = document.querySelector("input.all"),
+        accountBtns = document.querySelectorAll(".switcher-check");
 
     const emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const passwordRe = /^[a-z0-9]+$/;
@@ -42,5 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (emailIsValid && passwordIsValid) {
             //.............Other
         }
+    });
+
+    allBtn.addEventListener("change", (e) => {
+        accountBtns.forEach((btn) => {
+            btn.checked = e.target.checked;
+        });
     });
 });

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Панель управления</title>
+    <title>Control panel</title>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
@@ -13,73 +13,89 @@
     <main class="main">
         <div class="container">
             <section class="panel__info">
+                <div class="general-info">
+                    <div class="form-group url">
+                        <label for="url">URL</label>
+                        <input type="text" id="url" name="url" value="https://test.com" readonly>
+                    </div>
+                    <div class="form-group threads">
+                        <label for="threads">Threads</label>
+                        <input type="number" id="threads" name="threads" value="4" readonly>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
                 <form class="panel__form">
                     <div class="form-group email">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" value="romanov@gmail.com">
-                        <span class="invalid">Введите корректный email</span>
+                        <span class="invalid">Enter correct email</span>
                     </div>
                     <div class="form-group password">
-                        <label for="password">Пароль</label>
+                        <label for="password">Password</label>
                         <input type="password" id="password" name="password" value="blaeisb">
-                        <span class="invalid">Введите корректный пароль</span>
+                        <span class="invalid">Enter correct password</span>
                     </div>
                     <div class="form-group cv_code">
-                        <label for="cv_code">CV код</label>
+                        <label for="cv_code">CV code</label>
                         <input type="number" id="cv_code" name="cv_code" value="555">
-                        <span class="invalid">Введите корректный CV код</span>
+                        <span class="invalid">Enter correct CV code</span>
                     </div>
                     <div class="form-group size">
-                        <label for="size">Размер</label>
+                        <label for="size">Size</label>
                         <input type="text" id="size" name="size" value="M 9 / W 10.5">
-                        <span class="invalid">Введите корректный размер</span>
+                        <span class="invalid">Enter correct size</span>
                     </div>
                     <div class="form-group proxy">
-                        <label for="proxy">Прокси</label>
+                        <label for="proxy">Proxy</label>
                         <input type="text" id="proxy" name="proxy">
-                        <span class="invalid">Введите корректный прокси</span>
+                        <span class="invalid">Enter correct proxy</span>
                     </div>
-
-                    <div class="panel__form-buttons">
-                        <button class="add">Добавить</button>
-                        <button class="cancel">Отменить</button>
-                    </div>
+                    <button class="add">Add</button>
                 </form>
                 <div class="line"></div>
             </section>
             <section class="accounts">
+                <div class="all-accounts">
+                    <span class="all-accounts-text">All accounts: </span>
+                    <div class="switcher">
+                        <input type="checkbox" id="100" class="switcher-check-all all" />
+                        <label for="100"></label>
+                    </div>
+                </div>
                 <div class="account__wrapper">
                     <div class="account">aawececaaaa@gmail.com</div>
                     <div class="switcher">
-                        <input type="checkbox" id="123" class="switcher-check"/>
+                        <input type="checkbox" id="123" class="switcher-check" />
                         <label for="123"></label>
                     </div>
                 </div>
                 <div class="account__wrapper">
                     <div class="account">aaaawecwecaa@gmail.com</div>
                     <div class="switcher">
-                        <input type="checkbox" id="124" class="switcher-check"/>
+                        <input type="checkbox" id="124" class="switcher-check" />
                         <label for="124"></label>
                     </div>
                 </div>
                 <div class="account__wrapper">
                     <div class="account">wecwecwecwecwecwec@gmail.com</div>
                     <div class="switcher">
-                        <input type="checkbox" id="125" class="switcher-check"/>
+                        <input type="checkbox" id="125" class="switcher-check" />
                         <label for="125"></label>
                     </div>
                 </div>
                 <div class="account__wrapper">
                     <div class="account">wecwcwcwcwcwc@gmail.com</div>
                     <div class="switcher">
-                        <input type="checkbox" id="126" class="switcher-check"/>
+                        <input type="checkbox" id="126" class="switcher-check" />
                         <label for="126"></label>
                     </div>
                 </div>
                 <div class="account__wrapper">
                     <div class="account">aaawecwecwecwecaaa@gmail.com</div>
                     <div class="switcher">
-                        <input type="checkbox" id="127" class="switcher-check"/>
+                        <input type="checkbox" id="127" class="switcher-check" />
                         <label for="127"></label>
                     </div>
                 </div>
