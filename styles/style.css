@@ -204,6 +204,32 @@ body {
     border: none;
 }
 
+button.save {
+    font-family: "Raleway-Bold";
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 350px;
+    height: 55px;
+    background-color: #333;
+    border-radius: 27px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 29px auto 30px;
+}
+
+button.save:hover {
+    background-color: #57b846;
+}
+
 .panel__form {
     display: flex;
     flex-wrap: wrap;
