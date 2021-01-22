@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordField = document.querySelector(".form-group.password"),
         authForm = document.querySelector(".auth__form");
 
-    const loginRe = /^[a-zA-Z]+$/;
+    const loginRe = /^[a-zA-Zа-яА-Я]+$/;
     const passwordRe = /^[a-z0-9]+$/;
 
     const validateLogin = (login) => {
