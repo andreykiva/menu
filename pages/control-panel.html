@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управления</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <section class="panel__info">
+                <form class="panel__form">
+                    <div class="form-group email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                        <span class="invalid">Введите корректный email</span>
+                    </div>
+                    <div class="form-group password">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password">
+                        <span class="invalid">Введите корректный пароль</span>
+                    </div>
+                    <div class="form-group cv_code">
+                        <label for="cv_code">CV код</label>
+                        <input type="number" id="cv_code" name="cv_code">
+                        <span class="invalid">Введите корректный CV код</span>
+                    </div>
+                    <div class="form-group size">
+                        <label for="size">Размер</label>
+                        <input type="text" id="size" name="size">
+                        <span class="invalid">Введите корректный размер</span>
+                    </div>
+                    <div class="form-group proxy">
+                        <label for="proxy">Прокси</label>
+                        <input type="text" id="proxy" name="proxy">
+                        <span class="invalid">Введите корректный прокси</span>
+                    </div>
+
+                    <div class="panel__form-buttons">
+                        <button class="add">Добавить</button>
+                        <button class="cancel">Отменить</button>
+                    </div>
+                </form>
+                <div class="line"></div>
+            </section>
+            <section class="accounts">
+                <div class="account__wrapper">
+                    <div class="account">aawececaaaa@gmail.com</div>
+                    <div class="switcher">
+                        <input type="checkbox" id="123" class="switcher-check"/>
+                        <label for="123"></label>
+                    </div>
+                </div>
+                <div class="account__wrapper">
+                    <div class="account">aaaawecwecaa@gmail.com</div>
+                    <div class="switcher">
+                        <input type="checkbox" id="124" class="switcher-check"/>
+                        <label for="124"></label>
+                    </div>
+                </div>
+                <div class="account__wrapper">
+                    <div class="account">wecwecwecwecwecwec@gmail.com</div>
+                    <div class="switcher">
+                        <input type="checkbox" id="125" class="switcher-check"/>
+                        <label for="125"></label>
+                    </div>
+                </div>
+                <div class="account__wrapper">
+                    <div class="account">wecwcwcwcwcwc@gmail.com</div>
+                    <div class="switcher">
+                        <input type="checkbox" id="126" class="switcher-check"/>
+                        <label for="126"></label>
+                    </div>
+                </div>
+                <div class="account__wrapper">
+                    <div class="account">aaawecwecwecwecaaa@gmail.com</div>
+                    <div class="switcher">
+                        <input type="checkbox" id="127" class="switcher-check"/>
+                        <label for="127"></label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="../js/control-panel.js"></script>
+</body>
+
+</html>

@@ -4,171 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <title>Skin Match App</title>
+    <title>Вход</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/media.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <span>Skin Match App</span>
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <section class="app__info">
-                <p class="info-text"><span>Skin Match App</span> ищет совпадения в нашей базе данных изображений и
-                    определяет
-                    приблизительный
-                    диагноз кожного заболевания.
-                </p>
-                <img src="./images/main_img.png" alt="Main image">
-            </section>
-        </div>
-
-        <section class="instructions">
-            <h2 class="instructions-title">Инструкция</h2>
-            <div class="instructions__info">
-                <div class="container">
-                    <div class="steps">
-                        <div class="step__one step">
-                            <h4 class="step-title">Шаг 1.</h4>
-                            <p class="step-info">Ответьте на вопросы</p>
-                        </div>
-                        <div class="step__two step">
-                            <h4 class="step-title">Шаг 2.</h4>
-                            <p class="step-info">Сделайте 3-5 качественных фотографий
-                            </p>
-                            <ul class="info__list">
-                                <li class="list-item">Изображение должно быть в фокусе, при хорошем освещении и четко
-                                    центрированной
-                                    области.</li>
-                                <li class="list-item">Если это всего лишь одно повреждение, сделайте сфокусированный
-                                    крупный план.
-                                    Если
-                                    оно по всему телу, сделайте сфокусированное изображение, которое лучше всего
-                                    показывает проблему.</li>
-                                <li class="list-item">Не рисуйте на изображении. Не указывайте пальцем на больное место.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="step__three step">
-                            <h4 class="step-title">Шаг 3.</h4>
-                            <p class="step-info">Нажмите на кнопку ОК</p>
-                        </div>
-                    </div>
+    <div class="auth__wrapper">
+        <div class="auth">
+            <form class="auth__form">
+                <h2 class="auth__form-title">Вход</h2>
+                <div class="form-group email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Введите email" required>
+                    <span class="invalid">Введите корректный email</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="form">
-            <div class="container">
-                <form class="discover" name="discover">
-                    <div class="form-group">
-                        <label for="gender">Ваш пол:</label>
-                        <select id="gender" name="gender">
-                            <option selected value="male">Мужской</option>
-                            <option value="female">Женский</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Ваш возраст:</label>
-                        <input type="number" id="age" min="1" value="25" name="age" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="itching">Есть у вас зуд?</label>
-                        <select id="itching" name="itching">
-                            <option selected value="no">Нет</option>
-                            <option value="moderate">Умеренный зуд</option>
-                            <option value="severe">Сильный зуд</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="pain">Есть у вас боль?</label>
-                        <select id="pain" name="pain">
-                            <option selected value="no">Нет</option>
-                            <option value="slight">Слабая боль</option>
-                            <option value="severe">Сильная боль</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="duration">Сколько уже длится ваш дискомфорт на коже?</label>
-                        <select id="duration" name="duration">
-                            <option selected value="less_than_a_week">Меньше недели</option>
-                            <option value="less_than_a_month">Меньше месяца</option>
-                            <option value="less_than_a_year">Меньше года</option>
-                            <option value="more_than_a_year">Больше года</option>
-                        </select>
-                    </div>
-                    <div class="form-group email">
-                        <label for="email">Ваш email:</label>
-                        <input type="email" id="email" placeholder="Введите email" name="email" required>
-                        <div class="invalid-field">Неправильный email! Введите заново!</div>
-                    </div>
-                    <div class="form-group">
-                        <input type="file" id="actual-btn" hidden multiple name="files" required />
-                        <label for="actual-btn" class="actual-btn">Загрузите 3-5 фото</label>
-                        <div class="more">
-                            <span id="file-chosen"></span>
-                            <div class="details"><span class="details-text">Подробнее</span>
-                                <div class="details__block">
-                                    <img src="./images/right.jpg" alt="Details" class="details-img">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <button type="submit" class="submit_btn">ОК</button>
-                    </div>
-                </form>
-                <div class="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="form-group password">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                    <span class="invalid">Введите корректный пароль</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="result">
-            <div class="container">
-                <table class="results__table">
-                    <thead>
-                        <tr>
-                            <th>Название</th>
-                            <th>Вероятность</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody">
-                    </tbody>
-                </table>
-                <div class="result-info">
-                    В таблице нет самых вероятных имен кожных состояний. Чтобы получить полную таблицу, оплатите
-                    <span>100 рублей</span>
-                    и мы отправим вам на почту полную таблицу
-                </div>
-                <form class="completely" action="http://skinmatch.ru/home/signature">
-                    <input type="hidden" name="account" value="">
-                    <input type="hidden" name="sum" value="100">
-                    <input type="hidden" name="desc" value="Оплата полного результата диагностики">
-                    <button type="submit" class="get_completely">Оплатить полный результат</button>
-                </form>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer__content">
-            <p>Свяжитесь с нами: <a href="mailto:skinmatchapp@gmail.com">skinmatchapp@gmail.com</a></p>
-            <a href="//freekassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/23.png" title="Приём оплаты на сайте картами"></a>
+                <button type="submit" class="auth-btn">Войти</button>
+            </form>
         </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    </div>
+
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>
