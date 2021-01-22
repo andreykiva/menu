@@ -358,7 +358,8 @@ button.save:hover {
     cursor: pointer;
 }
 
-.switcher-check, .switcher-check-all {
+.switcher-check,
+.switcher-check-all {
     display: none;
 }
 
@@ -376,12 +377,13 @@ button.save:hover {
 
     .panel__form .form-group,
     .panel__form button.add,
-    .general-info .form-group {
+    .general-info__form  {
         margin-right: 20px;
         margin-left: 20px;
     }
 
-    .panel__form, .general-info {
+    .panel__form,
+    .general-info {
         justify-content: center;
     }
 }
