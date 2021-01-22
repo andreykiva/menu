@@ -1,22 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const authBtn = document.querySelector(".auth-btn"),
-        emailField = document.querySelector(".form-group.email"),
+        loginField = document.querySelector(".form-group.login"),
         passwordField = document.querySelector(".form-group.password"),
         authForm = document.querySelector(".auth__form");
 
-    const emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const loginRe = /^[a-zA-Z]+$/;
     const passwordRe = /^[a-z0-9]+$/;
 
-    const validateEmail = (email) => {
-        const emailIsValid = emailRe.test(String(email).toLowerCase());
+    const validateLogin = (login) => {
+        const loginIsValid = loginRe.test(String(login).toLowerCase());
 
-        if (!emailIsValid) {
-            emailField.classList.add("invalid-field");
+        if (!loginIsValid) {
+            loginField.classList.add("invalid-field");
         } else {
-            emailField.classList.remove("invalid-field");
+            loginField.classList.remove("invalid-field");
         }
 
-        return emailIsValid;
+        return loginIsValid;
     };
 
     const validatePassword = (password) => {
@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formData = new FormData(authForm);
 
-        const emailIsValid = validateEmail(formData.get("email"));
+        const loginIsValid = validateLogin(formData.get("login"));
         const passwordIsValid = validatePassword(formData.get("password"));
 
-        if (emailIsValid && passwordIsValid) {
+        if (loginIsValid && passwordIsValid) {
             history.pushState({}, "", "./pages/control-panel.html");
             location.reload()
 
