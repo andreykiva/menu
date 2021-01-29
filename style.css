@@ -1,0 +1,20 @@
+body {
+    background-color: #282828
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.menu__list a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(247, 232, 232);
+}
