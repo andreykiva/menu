@@ -1,123 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-    /*
-     * variables
-     */
-    const $pets = document.querySelector(".js_pets"),
-        $catsBtn = document.querySelector(".js_cats_btn"),
-        $dogsBtn = document.querySelector(".js_dogs_btn"),
-        $breedsMenu = document.querySelector(".js_breeds_menu"),
-        $breeds = document.querySelector(".js_breeds"),
-        $petSettings = document.querySelector(".js_pet_settings"),
-        $petImg = document.querySelector(".js_pet_img"),
-        $petName = document.querySelector(".js_pet_name"),
-        $petDescr = document.querySelector(".js_pet_descr"),
-        $moreInfoModal = document.querySelector(".js_more_info_modal"),
-        $overlay = document.querySelector(".js_overlay"),
-        $closeModalBtn = document.querySelector(".js_close_modal_btn"),
-        $moreBtn = document.querySelector(".js_more_btn");
+let level = 1;
 
-    let pets = 0; //0 - cats, 1 - dogs;
+const $scroll1 = document.querySelector(".scroll1"),
+	$scroll2 = document.querySelector(".scroll2"),
+	$scroll3 = document.querySelector(".scroll3"),
+	$scroll4 = document.querySelector(".scroll4"),
+	$scroll5 = document.querySelector(".scroll5"),
+	$answerForm = document.querySelector(".answer-form"),
+	$hideText = document.querySelector(".hide-text"),
+	$outsideInput = document.querySelector(".outside-input");
 
-    /*
-     * supporting functions
-     * */
-    const show = (el) => {
-        el.classList.remove("hide");
-        el.classList.add("show");
-    };
+const showNextScroll = (active, next) => {
+	active.classList.remove("scroll-down");
 
-    const hide = (el) => {
-        el.classList.remove("show");
-        el.classList.add("hide");
-    };
+	setTimeout(() => {
+		active.classList.add("hide");
+		next.classList.remove("hide");
 
-    /*
-     * main functions
-     * */
+		setTimeout(() => {
+			next.classList.add("scroll-down");
+			next.classList.remove("scroll-up");
+		}, 100);
+	}, 1000);
+};
 
-    const displayPetSettings = (id) => {
-        let pet;
+const chackAnswer = (el) => {
+	if (level === 1) {
+		el.classList.add("showGhost");
+		setTimeout(() => {
+			showNextScroll($scroll1, $scroll2);
+			level++;
+		}, 3000);
+	} else if (level === 2) {
+		if ($answerForm.value.toLowerCase() == "sage") {
+			el.classList.add("showGhost");
+			setTimeout(() => {
+				showNextScroll($scroll2, $scroll3);
+			}, 3000);
+			level++;
+		}
+	} else if (level === 3) {
+		if ($outsideInput.value.toLowerCase() == "baron") {
+			el.classList.add("showGhost");
+			setTimeout(() => {
+				showNextScroll($scroll3, $scroll4);
+			}, 3000);
+			level++;
+		}
+	}
+};
 
-        if (!pets) {
-            pet = cats.find((cat) => cat.id === +id);
-        } else {
-            pet = dogs.find((dog) => dog.id === +id);
-        }
-
-        $petImg.src = "./images/" + pet.mainImg;
-        $petName.textContent = pet.name;
-        $petDescr.textContent = pet.descr;
-
-        hide($breeds);
-        show($petSettings);
-    };
-
-    const initBreedsItems = () => {
-        const $items = document.querySelectorAll(".js_item");
-
-        $items.forEach((item) => {
-            item.addEventListener("click", () => {
-                displayPetSettings(item.dataset.id);
-            });
-        });
-    };
-
-    const appendBreeds = (array) => {
-        $breedsMenu.innerHTML = "";
-
-        for (let i = 0; i < array.length; i++) {
-            const { id, name, img } = array[i];
-
-            $breedsMenu.insertAdjacentHTML(
-                "beforeend",
-                `
-                <div data-id="${id}" class="breeds-menu__item js_item" onclick="displayPetSettings(${id})">
-                    <div class="back"></div>
-                    <img src="./images/${img}" alt="pet">
-                    <span class="name">${name}</span>
-                </div>
-                `
-            );
-        }
-
-        initBreedsItems();
-    };
-    /*
-     * handlers
-     * */
-
-    (() => {
-        $catsBtn.addEventListener("click", () => {
-            hide($pets);
-            appendBreeds(cats);
-            show($breeds);
-            pets = 0;
-        });
-        $dogsBtn.addEventListener("click", () => {
-            hide($pets);
-            appendBreeds(dogs);
-            show($breeds);
-            pets = 1;
-        });
-        $moreInfoModal.addEventListener("click", (e) => {
-            if (e.target.classList.contains("more-info-modal")) {
-                hide($overlay);
-                hide($moreInfoModal);
-            }
-        });
-        $moreBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            show($overlay);
-            show($moreInfoModal);
-        });
-        $closeModalBtn.addEventListener("click", () => {
-            hide($overlay);
-            hide($moreInfoModal);
-        });
-    })();
-
-    /*
-     * functions dummy calls
-     * */
-    appendBreeds(cats);
+$answerForm.addEventListener("input", (e) => {
+	if (e.target.value.toLowerCase() == "monocle") {
+		$hideText.classList.add("showText");
+	} else {
+		$hideText.classList.remove("showText");
+	}
 });

@@ -1,112 +1,71 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cats & Dogs</title>
-    <link rel="shortcut icon" href="./icons/pets.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hero's Way</title>
+	<link rel="icon" href="./img/gs-icon.png">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/relevator.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div class="pets-container js_pets">
-        <h1 class="title">Здоров'я - унікальне для кожного домашнього улюбленця</h1>
-        <div class="pets-menu">
-            <div class="pets-menu__item cats js_cats_btn">
-                <img src="./images/cat.png" alt="cat">
-                <div class="item-content">
-                    <button class="btn js_cats_btn">Коти</button>
-                </div>
-            </div>
-            <div class="pets-menu__item dogs js_dogs_btn">
-                <img src="./images/dog.png" alt="dog">
-                <div class="item-content">
-                    <button class="btn">Собаки</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="body-blur"></div>
 
-    <div class="breeds-container js_breeds hide">
-        <h2 class="title">Тепер оберіть породу</h2>
-        <div class="breeds-menu js_breeds_menu">
-        </div>
-    </div>
+	<div class="scroll scroll1 scroll-down">
+		<h1 class="title">Welcome, Hero</h1>
+		<p class="descr">But wait, you're not a hero yet. To prove that you are a true Guild Saga connoisseur and a
+			brave warrior, you have to solve my puzzle. I'm sure you won't make it. . . But if you're ready, let me
+			know.
+		</p>
+		<div class="ghost" onclick="chackAnswer(this)">
+			<img src="./img/ghost.png" alt="ghost">
+		</div>
+	</div>
 
-    <div class="pet-settings js_pet_settings hide">
-        <img src="./images/akita-main.jpg" alt="pet" class="pet-img js_pet_img">
-        <div class="settings-panel">
-            <div class="name js_pet_name">Акіта</div>
-            <p class="descr js_pet_descr">Акіти дуже полюбляють бути в компанії людей, проте вони водночас самостійні,
-                спокійні,
-                ініціативні й рішучі.
-            </p>
-            <form>
-                <div class="form-group">
-                    <span class="title">Стать</span>
-                    <div class="content">
-                        <div class="radiobtn">
-                            <input type="radio" id="male" name="gender" checked />
-                            <label for="male">Чоловіча</label>
-                        </div>
-                        <div class="radiobtn">
-                            <input type="radio" id="female" name="gender" />
-                            <label for="female">Жіноча</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="info">
-                        <label class="title" for="age">Вік</label>
-                        <span>2 роки</span>
-                    </div>
-                    <input type="range" id="age" name="age" min="0" max="10" value="0" />
-                </div>
-                <div class="form-group">
-                    <div class="info">
-                        <label class="title" for="weight">Вага</label>
-                        <span>3 кг</span>
-                    </div>
-                    <input type="range" id="weight" name="weight" min="0" max="5" value="0" />
-                </div>
-                <button class="more-btn js_more_btn">Дізнатися більше</button>
-            </form>
-        </div>
-    </div>
+	<div class="scroll scroll2 hide">
+		<h1 class="title">Through the letters</h1>
+		<p class="descr hide-text">Thi<span>s</span> text contains the answer, which will <span>a</span>llow you to open
+			the next pa<span>g</span>e of this puzzle. To
+			see it, you will need an optical item that can be found <a href="https://db.guildsaga.com/items">here</a>.
+			But what is it? Write its nam<span>e</span> below.
+		</p>
+		<input type="text" class="answer-form">
+		<div class="ghost" onclick="chackAnswer(this)">
+			<img src="./img/ghost.png" alt="ghost">
+		</div>
+	</div>
 
-    <div class="more-info-modal hide js_more_info_modal">
-        <div class="modal-content">
-            <span class="close-btn js_close_modal_btn">
-                <img src="./icons/close.svg" alt="close">
-            </span>
-            <h6 class="title">Особливості харчування</h6>
-            <p class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure fugit! Et non
-                accusantium rem
-                deleniti sint? Repudiandae culpa cupiditate sint rem minima atque architecto reiciendis deserunt.
-                Explicabo, perferendis blanditiis.
-            </p>
-            <h6 class="title">Особливості догляду</h6>
-            <p class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure fugit! Et non
-                accusantium rem
-                deleniti sint? Repudiandae culpa cupiditate sint rem minima atque architecto reiciendis deserunt.
-                Explicabo, perferendis blanditiis.
-            </p>
-            <h6 class="title">Особливості вакцинації</h6>
-            <p class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure fugit! Et non
-                accusantium rem
-                deleniti sint? Repudiandae culpa cupiditate sint rem minima atque architecto reiciendis deserunt.
-                Explicabo, perferendis blanditiis.
-            </p>
-        </div>
-    </div>
+	<div class="scroll scroll3 hide">
+		<h1 class="title">Outside</h1>
+		<div class="scroll-text">
+			<p class="descr">Have you ever had to rack your brains looking for an answer that is right in front of you
+				and at the same time out of your sight? Not? 
+				Then you can't solve it. . .
+				<strong>Baron</strong>
+			</p>
+		</div>
+		<input type="text" class="outside-input">
+		<div class="ghost" onclick="chackAnswer(this)">
+			<img src="./img/ghost.png" alt="ghost">
+		</div>
+	</div>
 
-    <div class="overlay js_overlay hide"></div>
+	<div class="scroll scroll4 hide">
+		<h1 class="title">Congrats</h1>
+		<img src="./img/hero.png" class="hero" alt="hero">
+		<p class="descr">Now you are a real hero</p>
+		<span>created by [Ghost] Andrey</span>
+		<div class="ghost showGhost" onclick="chackAnswer(this)">
+			<img src="./img/ghost.png" alt="ghost">
+		</div>
+	</div>
 
-    <script src="./js/data.js"></script>
-    <script src="./js/script.js"></script>
+	<script src="./js/revealator.js"></script>
+	<script src="./js/script.js"></script>
 </body>
 
 </html>
