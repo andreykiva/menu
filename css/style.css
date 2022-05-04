@@ -8,133 +8,167 @@ html {
     box-sizing: inherit;
 }
 
-@font-face {
-    font-family: 'Yoster';
-    src: url("../fonts/yoster-island.regular.ttf") format("truetype");
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(../img/bg.gif);
+    background-image: url(../img/background.jpg);
     background-size: 100%;
-    font-family: 'Yoster', cursive;
-    color: rgb(10, 10, 10);
+	overflow: hidden;
+	font-family: "Courier New", sans-serif;
 }
 
-.body-blur {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.849);
-}
-
-.scroll {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    padding: 200px 110px;
-	max-width: 700px;
+.blur {
+	position: fixed;
 	width: 100%;
-    text-align: center;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url(../img/scroll.png);
-    background-size: auto 100%;
-	transform: translateY(-1000px);
-    z-index: 100;
-    transition: transform 1.2s ease-in-out;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.856);
 }
 
-.scroll.hide {
-	display: none !important;
+.game {
+	position: absolute;
+	height: 100vh;
+	z-index: 10;
 }
 
-.scroll.scroll-up {
-	transform: translateY(-1000px);
+.game img {
+	height: 100%;
 }
 
-.scroll.scroll-down {
-	transform: translateY(0px);
+.created {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 5;
+	color: #fff;
 }
 
-.scroll .title {
-    padding-top: 100px;
-    font-size: 50px;
-    margin-bottom: 30px;
+.key {
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	max-width: 200px;
+	color: #fff;
+	font-size: 100px;
+	font-weight: bold;
+	z-index: 10;
 }
 
-.scroll2 .title {
-    padding-top: 20px;
+.key.win {
+	color: rgb(51, 219, 0);
 }
 
-.scroll .descr {
-    font-size: 30px;
+.key.lose {
+	color: rgb(201, 14, 14);
 }
 
-.scroll .descr a {
-	color: rgb(83, 47, 15);
+.timer {
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	color: #fff;
+	font-size: 50px;
+	font-weight: bold;
 }
 
-.scroll .descr.showText span{
-	color: rgb(194, 10, 10);
+.timer.win {
+	color: rgb(51, 219, 0);
 }
 
-.scroll .descr strong {
-	display: block;
-	margin-top: 400px;
+.timer.lose {
+	color: rgb(201, 14, 14);
 }
 
-.scroll input {
-	margin-top: 40px;
-	width: 200px;
-	height: 30px;
-	border: none;
-	outline: none;
-	background: transparent;
-	font-family: 'Yoster', cursive;
-    color: rgb(10, 10, 10);
-    font-size: 30px;
-	text-align: center;
-	border-bottom: 3px solid rgb(83, 47, 15);
+.letter {
+	position: absolute;
+	z-index: 20;
+	width: 10px;
+	font-size: 32px;
+	border-radius: 50%;
+	color: red;
+	opacity: 0;
+	cursor: default;
+	user-select: none;
 }
 
-.scroll-text {
-	height: 200px;
-	overflow-y: scroll;
+.letter.show {
+	opacity: 1;
 }
 
-.scroll-text::-webkit-scrollbar {
-    width: 0em;
+.letter1 {
+	left: 65px;
+	top: 90px;
 }
 
-.scroll4 .descr {
-	margin-bottom: 15px;
+.letter2 {
+	left: 210px;
+	top: 120px;
 }
 
-.ghost {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    bottom: 117px;
-    left: 42.7%;
-	cursor: pointer;
+.letter3 {
+	left: 194px;
+	top: 470px;
 }
 
-.ghost img {
-    width: 100%;
-    opacity: 0;
-    transition: opacity 2s;
+.letter4 {
+	right: 195px;
+	top: 140px;
 }
 
-.ghost.showGhost img {
-    opacity: 1;
+.letter5 {
+	right: 275px;
+	top: 210px;
 }
 
-.hero {
-	width: 100px;
+.letter6 {
+	right: 565px;
+	top: 275px;
+}
+
+.letter7 {
+	left: 255px;
+	top: 255px;
+}
+
+.letter8 {
+	right: 490px;
+	bottom: 455px;
+}
+
+.letter9 {
+	left: 338px;
+	bottom: 330px;
+}
+
+.letter10 {
+	right: 110px;
+	bottom: 155px;
+}
+
+.letter11 {
+	right: 446px;
+	bottom: 55px;
+}
+
+.letter12 {
+	right: 410px;
+	bottom: 275px;
+}
+
+.letter13 {
+	left: 170px;
+	bottom: 5px;
+}
+
+.letter14 {
+	left: 55px;
+	bottom: 470px;
+}
+
+.letter15 {
+	left: 265px;
+	bottom: 285px;
 }

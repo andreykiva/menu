@@ -5,66 +5,43 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hero's Way</title>
-	<link rel="icon" href="./img/gs-icon.png">
+	<title>Kings of da Street</title>
+	<link rel="icon" href="./img/icon.jpg">
 	<link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/relevator.css">
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<div class="body-blur"></div>
+	<div class="key js_key"></div>
 
-	<div class="scroll scroll1 scroll-down">
-		<h1 class="title">Welcome, Hero</h1>
-		<p class="descr">But wait, you're not a hero yet. To prove that you are a true Guild Saga connoisseur and a
-			brave warrior, you have to solve my puzzle. I'm sure you won't make it. . . But if you're ready, let me
-			know.
-		</p>
-		<div class="ghost" onclick="chackAnswer(this)">
-			<img src="./img/ghost.png" alt="ghost">
-		</div>
+	<div class="game">
+		<div class="letter letter1 js_letter">✓</div>
+		<div class="letter letter2 js_letter">✓</div>
+		<div class="letter letter3 js_letter">✓</div>
+		<div class="letter letter4 js_letter">✓</div>
+		<div class="letter letter5 js_letter">✓</div>
+		<div class="letter letter6 js_letter">✓</div>
+		<div class="letter letter7 js_letter">✓</div>
+		<div class="letter letter8 js_letter">✓</div>
+		<div class="letter letter9 js_letter">✓</div>
+		<div class="letter letter10 js_letter">✓</div>
+		<div class="letter letter11 js_letter">✓</div>
+		<div class="letter letter12 js_letter">✓</div>
+		<div class="letter letter13 js_letter">✓</div>
+		<div class="letter letter14 js_letter">✓</div>
+		<div class="letter letter15 js_letter">✓</div>
+
+		<img src="./img/main.jpg" alt="main" class="main-img">
 	</div>
 
-	<div class="scroll scroll2 hide">
-		<h1 class="title">Through the letters</h1>
-		<p class="descr hide-text">Thi<span>s</span> text contains the answer, which will <span>a</span>llow you to open
-			the next pa<span>g</span>e of this puzzle. To
-			see it, you will need an optical item that can be found <a href="https://db.guildsaga.com/items">here</a>.
-			But what is it? Write its nam<span>e</span> below.
-		</p>
-		<input type="text" class="answer-form">
-		<div class="ghost" onclick="chackAnswer(this)">
-			<img src="./img/ghost.png" alt="ghost">
-		</div>
+	<div class="blur"></div>
+
+	<div class="created">
+		created by Andrey Kiva#8033
 	</div>
 
-	<div class="scroll scroll3 hide">
-		<h1 class="title">Outside</h1>
-		<div class="scroll-text">
-			<p class="descr">Have you ever had to rack your brains looking for an answer that is right in front of you
-				and at the same time out of your sight? Not? 
-				Then you can't solve it. . .
-				<strong>Baron</strong>
-			</p>
-		</div>
-		<input type="text" class="outside-input">
-		<div class="ghost" onclick="chackAnswer(this)">
-			<img src="./img/ghost.png" alt="ghost">
-		</div>
-	</div>
+	<div class="timer js_timer"></div>
 
-	<div class="scroll scroll4 hide">
-		<h1 class="title">Congrats</h1>
-		<img src="./img/hero.png" class="hero" alt="hero">
-		<p class="descr">Now you are a real hero</p>
-		<span>created by [Ghost] Andrey</span>
-		<div class="ghost showGhost" onclick="chackAnswer(this)">
-			<img src="./img/ghost.png" alt="ghost">
-		</div>
-	</div>
-
-	<script src="./js/revealator.js"></script>
 	<script src="./js/script.js"></script>
 </body>
 
