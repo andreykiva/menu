@@ -1,0 +1,28 @@
+.BackBtn {
+	position: fixed;
+	left: 120px;
+	top: 12px;
+    width: 100px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+	text-decoration: none;
+    cursor: pointer;
+	z-index: 95;
+    transition: background-color .3s ease;
+}
+
+.BackBtn img {
+    transform: rotate(-180deg);
+    width: 16px;
+}
+
+.BackBtn:hover {
+    background-color: #da311f;
+}

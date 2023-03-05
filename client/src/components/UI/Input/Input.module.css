@@ -1,0 +1,40 @@
+.InputWr {
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.Input {
+	font-size: 16px;
+	color: #4b2354;
+	line-height: 1.2;
+	display: block;
+	width: 100%;
+	height: 62px;
+	background: transparent;
+	padding: 0 20px 0 23px;
+	margin-bottom: 25px;
+	border-radius: 15px;
+	outline: none;
+	border: none;
+    box-shadow: 0 5px 30px 0px rgba(0, 0, 0, 0.1);
+	transition: all 0.4s;
+}
+
+.InputError {
+	display: none;
+	font-size: 14px;
+	color: rgb(226, 25, 25);
+	position: absolute;
+	bottom: -20px;
+	left: 23px;
+}
+
+.Input.Invalid {
+    box-shadow: 0 5px 30px 0px rgba(255, 0, 0, 0.349);
+}
+
+.Input.Invalid + .InputError {
+	display: block;
+}

@@ -1,0 +1,44 @@
+.Range {
+	margin-bottom: 40px;
+}
+
+.RangeInput {
+	-webkit-appearance: none;
+	background-color: #bdc3c7;
+	max-width: 500px;
+	width: 100%;
+	height: 5px;
+	border-radius: 5px;
+	outline: 0;
+}
+
+.RangeInput::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #e74c3c;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid white;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+​.RangeInput::-webkit-slider-thumb:hover {
+	background-color: white;
+	border: 2px solid #e74c3c;
+}
+
+.RangeInput::-webkit-slider-thumb:active {
+	transform: scale(1.6);
+}
+
+.RangeTitle {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.RangeInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,6 @@
+export const GET_BREEDS = 'GET_BREEDS',
+	GET_PET = 'GET_PET',
+	SET_LOADING = 'SET_LOADING';
+
+export const AUTH_SUCCESS = 'AUTH_SUCCESS',
+	LOGOUT = 'LOGOUT';

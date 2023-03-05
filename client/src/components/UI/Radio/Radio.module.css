@@ -1,0 +1,38 @@
+.Radio {
+	width: 117px;
+	position: relative;
+	display: block;
+	font-size: 17px;
+	margin-right: 10px;
+}
+
+.Radio:first-child {
+	position: relative;
+	display: block;
+}
+
+.Radio:last-child {
+	margin-right: 0;
+}
+
+.Radio label {
+	display: block;
+	text-align: center;
+	background: whitesmoke;
+	color: #000;
+	border-radius: 5px;
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+.Radio input[type='radio'] {
+	display: none;
+	position: absolute;
+	width: 100%;
+	appearance: none;
+}
+
+.Radio input[type='radio']:checked + label {
+	background: #e74c3c;
+	color: #fff;
+}

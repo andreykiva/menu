@@ -1,0 +1,29 @@
+.Register {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.RegisterForm {
+	max-width: 390px;
+	width: 100%;
+	background: #fff;
+	border-radius: 10px;
+	padding: 80px 55px 40px;
+	box-shadow: 0 3px 20px 0px rgba(255, 0, 0, 0.178);
+	overflow: hidden;
+}
+
+.RegisterForm h2 {
+	display: block;
+	font-size: 30px;
+	color: rgb(226, 25, 25);
+	line-height: 1.2;
+	text-align: center;
+	margin-bottom: 36px;
+}
+
+.Register img {
+	width: 30%;
+}

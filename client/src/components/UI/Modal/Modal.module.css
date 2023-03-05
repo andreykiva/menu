@@ -1,0 +1,54 @@
+.Overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.623);
+}
+
+.Overlay.Open {
+	display: flex;
+}
+
+.Overlay.Close {
+	display: none;
+}
+
+.Modal {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	max-width: 800px;
+	width: 100%;
+	padding: 40px;
+	background-color: #fff;
+	border-radius: 15px;
+	z-index: 100;
+	transition: transform 0.4s ease;
+}
+
+.Modal.Open {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.Modal.Close {
+	transform: translate(-50%, -50%) scale(0);
+}
+
+.ModalCloseBtn {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity 0.3s ease;
+}
+
+.ModalCloseBtn:hover {
+	opacity: 1;
+}

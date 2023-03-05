@@ -1,0 +1,22 @@
+.NavigationItem {
+	margin: 10px 0;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+}
+
+.NavigationItem a {
+	color: rgb(226, 25, 25);
+	font-family: 'Gilroy SemiBold', sans-serif;
+	text-decoration: none;
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	transition: color 0.2s ease-in-out;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+	color: rgba(204, 51, 51, 0.884);
+}

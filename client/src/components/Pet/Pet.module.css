@@ -1,0 +1,7 @@
+.Pet {
+	display: flex;
+}
+
+.PetImg {
+    width: 700px;
+}

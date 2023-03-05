@@ -1,0 +1,8 @@
+.PetSelection h1 {
+    margin-bottom: 30px;
+}
+
+.PetSelection .PetItems {
+	display: flex;
+    justify-content: center;
+}
